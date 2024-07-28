@@ -1,0 +1,1387 @@
+patient_files,diagnose,labels
+MLL_231975,*** unspecified ***,0
+MLL_231979,*** unspecified ***,0
+MLL_231982,*** unspecified ***,0
+MLL_232251,*** unspecified ***,0
+MLL_232393,*** unspecified ***,0
+MLL_230918,*** unspecified ***,0
+MLL_232530,*** unspecified ***,0
+MLL_193565,*** unspecified ***,0
+MLL_233008,*** unspecified ***,0
+MLL_202973,*** unspecified ***,0
+MLL_203077,*** unspecified ***,0
+MLL_203509,*** unspecified ***,0
+MLL_206554,*** unspecified ***,0
+MLL_233814,*** unspecified ***,0
+MLL_233968,*** unspecified ***,0
+MLL_234034,*** unspecified ***,0
+MLL_234136,*** unspecified ***,0
+MLL_209650,*** unspecified ***,0
+MLL_234599,*** unspecified ***,0
+MLL_213005,*** unspecified ***,0
+MLL_213017,*** unspecified ***,0
+MLL_232254,AML M3,0
+MLL_232022,AML möglich,0
+MLL_205828,AML möglich,0
+MLL_206670,AML möglich,0
+MLL_212163,AML möglich,0
+MLL_216204,AML möglich,0
+MLL_232678,atypische CML (nach WHO 2017),0
+MLL_194011,atypische CML (nach WHO 2017),0
+MLL_232950,atypische CML (nach WHO 2017),0
+MLL_180452,CMML möglich,0
+MLL_232362,CMML möglich,0
+MLL_185180,CMML möglich,0
+MLL_190533,CMML möglich,0
+MLL_192809,CMML möglich,0
+MLL_193567,CMML möglich,0
+MLL_232680,CMML möglich,0
+MLL_205070,CMML möglich,0
+MLL_233593,CMML möglich,0
+MLL_205879,CMML möglich,0
+MLL_207435,CMML möglich,0
+MLL_210810,CMML möglich,0
+MLL_234692,CMML möglich,0
+MLL_215242,CMML möglich,0
+MLL_235261,CMML möglich,0
+MLL_211850,CMML possible,0
+MLL_210087,CMML-AML Grenzbefund,0
+MLL_235138,CMML-AML Grenzbefund,0
+MLL_235274,Consistent with MGUS,0
+MLL_232247,Hypereosinophilie unklarer Signifikanz,0
+MLL_227875,Hypereosinophilie unklarer Signifikanz,0
+MLL_232420,Hypereosinophilie unklarer Signifikanz,0
+MLL_232489,Hypereosinophilie unklarer Signifikanz,0
+MLL_202250,Hypereosinophilie unklarer Signifikanz,0
+MLL_233972,Hypereosinophilie unklarer Signifikanz,0
+MLL_234246,Hypereosinophilie unklarer Signifikanz,0
+MLL_234330,Hypereosinophilie unklarer Signifikanz,0
+MLL_211195,Hypereosinophilie unklarer Signifikanz,0
+MLL_234555,Hypereosinophilie unklarer Signifikanz,0
+MLL_235062,Hypereosinophilie unklarer Signifikanz,0
+MLL_232422,Kein Hinweis auf Lymphom,0
+MLL_203638,Kein Hinweis auf Lymphom,0
+MLL_233975,Kein Hinweis auf Lymphom,0
+MLL_231981,Kein Hinweis auf Lymphom,0
+MLL_232019,Kein Hinweis auf Lymphom,0
+MLL_176212,Kein Hinweis auf Lymphom,0
+MLL_232026,Kein Hinweis auf Lymphom,0
+MLL_232032,Kein Hinweis auf Lymphom,0
+MLL_232054,Kein Hinweis auf Lymphom,0
+MLL_232060,Kein Hinweis auf Lymphom,0
+MLL_232064,Kein Hinweis auf Lymphom,0
+MLL_232063,Kein Hinweis auf Lymphom,0
+MLL_232075,Kein Hinweis auf Lymphom,0
+MLL_232076,Kein Hinweis auf Lymphom,0
+MLL_232124,Kein Hinweis auf Lymphom,0
+MLL_232139,Kein Hinweis auf Lymphom,0
+MLL_232142,Kein Hinweis auf Lymphom,0
+MLL_232145,Kein Hinweis auf Lymphom,0
+MLL_232190,Kein Hinweis auf Lymphom,0
+MLL_232224,Kein Hinweis auf Lymphom,0
+MLL_232237,Kein Hinweis auf Lymphom,0
+MLL_232241,Kein Hinweis auf Lymphom,0
+MLL_232258,Kein Hinweis auf Lymphom,0
+MLL_194707,Kein Hinweis auf Lymphom,0
+MLL_232271,Kein Hinweis auf Lymphom,0
+MLL_232287,Kein Hinweis auf Lymphom,0
+MLL_232293,Kein Hinweis auf Lymphom,0
+MLL_232294,Kein Hinweis auf Lymphom,0
+MLL_232296,Kein Hinweis auf Lymphom,0
+MLL_232297,Kein Hinweis auf Lymphom,0
+MLL_232303,Kein Hinweis auf Lymphom,0
+MLL_232306,Kein Hinweis auf Lymphom,0
+MLL_232312,Kein Hinweis auf Lymphom,0
+MLL_232325,Kein Hinweis auf Lymphom,0
+MLL_232331,Kein Hinweis auf Lymphom,0
+MLL_232343,Kein Hinweis auf Lymphom,0
+MLL_232365,Kein Hinweis auf Lymphom,0
+MLL_232368,Kein Hinweis auf Lymphom,0
+MLL_232375,Kein Hinweis auf Lymphom,0
+MLL_191311,Kein Hinweis auf Lymphom,0
+MLL_194198,Kein Hinweis auf Lymphom,0
+MLL_194216,Kein Hinweis auf Lymphom,0
+MLL_182259,Kein Hinweis auf Lymphom,0
+MLL_194270,Kein Hinweis auf Lymphom,0
+MLL_194289,Kein Hinweis auf Lymphom,0
+MLL_194421,Kein Hinweis auf Lymphom,0
+MLL_194455,Kein Hinweis auf Lymphom,0
+MLL_194474,Kein Hinweis auf Lymphom,0
+MLL_194540,Kein Hinweis auf Lymphom,0
+MLL_194627,Kein Hinweis auf Lymphom,0
+MLL_194634,Kein Hinweis auf Lymphom,0
+MLL_194642,Kein Hinweis auf Lymphom,0
+MLL_194673,Kein Hinweis auf Lymphom,0
+MLL_194691,Kein Hinweis auf Lymphom,0
+MLL_194789,Kein Hinweis auf Lymphom,0
+MLL_194802,Kein Hinweis auf Lymphom,0
+MLL_194829,Kein Hinweis auf Lymphom,0
+MLL_194884,Kein Hinweis auf Lymphom,0
+MLL_184595,Kein Hinweis auf Lymphom,0
+MLL_194901,Kein Hinweis auf Lymphom,0
+MLL_194936,Kein Hinweis auf Lymphom,0
+MLL_195034,Kein Hinweis auf Lymphom,0
+MLL_195035,Kein Hinweis auf Lymphom,0
+MLL_195068,Kein Hinweis auf Lymphom,0
+MLL_195115,Kein Hinweis auf Lymphom,0
+MLL_195127,Kein Hinweis auf Lymphom,0
+MLL_195148,Kein Hinweis auf Lymphom,0
+MLL_195153,Kein Hinweis auf Lymphom,0
+MLL_195187,Kein Hinweis auf Lymphom,0
+MLL_195207,Kein Hinweis auf Lymphom,0
+MLL_195212,Kein Hinweis auf Lymphom,0
+MLL_195246,Kein Hinweis auf Lymphom,0
+MLL_195250,Kein Hinweis auf Lymphom,0
+MLL_195300,Kein Hinweis auf Lymphom,0
+MLL_195326,Kein Hinweis auf Lymphom,0
+MLL_195381,Kein Hinweis auf Lymphom,0
+MLL_195395,Kein Hinweis auf Lymphom,0
+MLL_195456,Kein Hinweis auf Lymphom,0
+MLL_195544,Kein Hinweis auf Lymphom,0
+MLL_195599,Kein Hinweis auf Lymphom,0
+MLL_226606,Kein Hinweis auf Lymphom,0
+MLL_226655,Kein Hinweis auf Lymphom,0
+MLL_226671,Kein Hinweis auf Lymphom,0
+MLL_226742,Kein Hinweis auf Lymphom,0
+MLL_226787,Kein Hinweis auf Lymphom,0
+MLL_226858,Kein Hinweis auf Lymphom,0
+MLL_226870,Kein Hinweis auf Lymphom,0
+MLL_185739,Kein Hinweis auf Lymphom,0
+MLL_185756,Kein Hinweis auf Lymphom,0
+MLL_227004,Kein Hinweis auf Lymphom,0
+MLL_227031,Kein Hinweis auf Lymphom,0
+MLL_227051,Kein Hinweis auf Lymphom,0
+MLL_227072,Kein Hinweis auf Lymphom,0
+MLL_185914,Kein Hinweis auf Lymphom,0
+MLL_227199,Kein Hinweis auf Lymphom,0
+MLL_227266,Kein Hinweis auf Lymphom,0
+MLL_227289,Kein Hinweis auf Lymphom,0
+MLL_227381,Kein Hinweis auf Lymphom,0
+MLL_227386,Kein Hinweis auf Lymphom,0
+MLL_227419,Kein Hinweis auf Lymphom,0
+MLL_190581,Kein Hinweis auf Lymphom,0
+MLL_227635,Kein Hinweis auf Lymphom,0
+MLL_227770,Kein Hinweis auf Lymphom,0
+MLL_227806,Kein Hinweis auf Lymphom,0
+MLL_230870,Kein Hinweis auf Lymphom,0
+MLL_230971,Kein Hinweis auf Lymphom,0
+MLL_230989,Kein Hinweis auf Lymphom,0
+MLL_231026,Kein Hinweis auf Lymphom,0
+MLL_231134,Kein Hinweis auf Lymphom,0
+MLL_231213,Kein Hinweis auf Lymphom,0
+MLL_191283,Kein Hinweis auf Lymphom,0
+MLL_231314,Kein Hinweis auf Lymphom,0
+MLL_191537,Kein Hinweis auf Lymphom,0
+MLL_231364,Kein Hinweis auf Lymphom,0
+MLL_231375,Kein Hinweis auf Lymphom,0
+MLL_231527,Kein Hinweis auf Lymphom,0
+MLL_231543,Kein Hinweis auf Lymphom,0
+MLL_231580,Kein Hinweis auf Lymphom,0
+MLL_231605,Kein Hinweis auf Lymphom,0
+MLL_231701,Kein Hinweis auf Lymphom,0
+MLL_231722,Kein Hinweis auf Lymphom,0
+MLL_231748,Kein Hinweis auf Lymphom,0
+MLL_231773,Kein Hinweis auf Lymphom,0
+MLL_231781,Kein Hinweis auf Lymphom,0
+MLL_231890,Kein Hinweis auf Lymphom,0
+MLL_232413,Kein Hinweis auf Lymphom,0
+MLL_232419,Kein Hinweis auf Lymphom,0
+MLL_232423,Kein Hinweis auf Lymphom,0
+MLL_232441,Kein Hinweis auf Lymphom,0
+MLL_232460,Kein Hinweis auf Lymphom,0
+MLL_232466,Kein Hinweis auf Lymphom,0
+MLL_232467,Kein Hinweis auf Lymphom,0
+MLL_192483,Kein Hinweis auf Lymphom,0
+MLL_232491,Kein Hinweis auf Lymphom,0
+MLL_232494,Kein Hinweis auf Lymphom,0
+MLL_232506,Kein Hinweis auf Lymphom,0
+MLL_232521,Kein Hinweis auf Lymphom,0
+MLL_232550,Kein Hinweis auf Lymphom,0
+MLL_232564,Kein Hinweis auf Lymphom,0
+MLL_232573,Kein Hinweis auf Lymphom,0
+MLL_232586,Kein Hinweis auf Lymphom,0
+MLL_232591,Kein Hinweis auf Lymphom,0
+MLL_232592,Kein Hinweis auf Lymphom,0
+MLL_232593,Kein Hinweis auf Lymphom,0
+MLL_193755,Kein Hinweis auf Lymphom,0
+MLL_232608,Kein Hinweis auf Lymphom,0
+MLL_232609,Kein Hinweis auf Lymphom,0
+MLL_232610,Kein Hinweis auf Lymphom,0
+MLL_232612,Kein Hinweis auf Lymphom,0
+MLL_232617,Kein Hinweis auf Lymphom,0
+MLL_232620,Kein Hinweis auf Lymphom,0
+MLL_232637,Kein Hinweis auf Lymphom,0
+MLL_193654,Kein Hinweis auf Lymphom,0
+MLL_232658,Kein Hinweis auf Lymphom,0
+MLL_232675,Kein Hinweis auf Lymphom,0
+MLL_233291,Kein Hinweis auf Lymphom,0
+MLL_232682,Kein Hinweis auf Lymphom,0
+MLL_233014,Kein Hinweis auf Lymphom,0
+MLL_232731,Kein Hinweis auf Lymphom,0
+MLL_232735,Kein Hinweis auf Lymphom,0
+MLL_232740,Kein Hinweis auf Lymphom,0
+MLL_232744,Kein Hinweis auf Lymphom,0
+MLL_232761,Kein Hinweis auf Lymphom,0
+MLL_232766,Kein Hinweis auf Lymphom,0
+MLL_232772,Kein Hinweis auf Lymphom,0
+MLL_232776,Kein Hinweis auf Lymphom,0
+MLL_232778,Kein Hinweis auf Lymphom,0
+MLL_232782,Kein Hinweis auf Lymphom,0
+MLL_232790,Kein Hinweis auf Lymphom,0
+MLL_232802,Kein Hinweis auf Lymphom,0
+MLL_232806,Kein Hinweis auf Lymphom,0
+MLL_232816,Kein Hinweis auf Lymphom,0
+MLL_232821,Kein Hinweis auf Lymphom,0
+MLL_232833,Kein Hinweis auf Lymphom,0
+MLL_232836,Kein Hinweis auf Lymphom,0
+MLL_232842,Kein Hinweis auf Lymphom,0
+MLL_232848,Kein Hinweis auf Lymphom,0
+MLL_200626,Kein Hinweis auf Lymphom,0
+MLL_232853,Kein Hinweis auf Lymphom,0
+MLL_232878,Kein Hinweis auf Lymphom,0
+MLL_232880,Kein Hinweis auf Lymphom,0
+MLL_232887,Kein Hinweis auf Lymphom,0
+MLL_232908,Kein Hinweis auf Lymphom,0
+MLL_232913,Kein Hinweis auf Lymphom,0
+MLL_232927,Kein Hinweis auf Lymphom,0
+MLL_232956,Kein Hinweis auf Lymphom,0
+MLL_232966,Kein Hinweis auf Lymphom,0
+MLL_232973,Kein Hinweis auf Lymphom,0
+MLL_232984,Kein Hinweis auf Lymphom,0
+MLL_232985,Kein Hinweis auf Lymphom,0
+MLL_232990,Kein Hinweis auf Lymphom,0
+MLL_201137,Kein Hinweis auf Lymphom,0
+MLL_233013,Kein Hinweis auf Lymphom,0
+MLL_201363,Kein Hinweis auf Lymphom,0
+MLL_233016,Kein Hinweis auf Lymphom,0
+MLL_233026,Kein Hinweis auf Lymphom,0
+MLL_233036,Kein Hinweis auf Lymphom,0
+MLL_233038,Kein Hinweis auf Lymphom,0
+MLL_233043,Kein Hinweis auf Lymphom,0
+MLL_233048,Kein Hinweis auf Lymphom,0
+MLL_233057,Kein Hinweis auf Lymphom,0
+MLL_233072,Kein Hinweis auf Lymphom,0
+MLL_233087,Kein Hinweis auf Lymphom,0
+MLL_201680,Kein Hinweis auf Lymphom,0
+MLL_233117,Kein Hinweis auf Lymphom,0
+MLL_201960,Kein Hinweis auf Lymphom,0
+MLL_233139,Kein Hinweis auf Lymphom,0
+MLL_233141,Kein Hinweis auf Lymphom,0
+MLL_233158,Kein Hinweis auf Lymphom,0
+MLL_233177,Kein Hinweis auf Lymphom,0
+MLL_233178,Kein Hinweis auf Lymphom,0
+MLL_233200,Kein Hinweis auf Lymphom,0
+MLL_233288,Kein Hinweis auf Lymphom,0
+MLL_233218,Kein Hinweis auf Lymphom,0
+MLL_233229,Kein Hinweis auf Lymphom,0
+MLL_233235,Kein Hinweis auf Lymphom,0
+MLL_233239,Kein Hinweis auf Lymphom,0
+MLL_233241,Kein Hinweis auf Lymphom,0
+MLL_233243,Kein Hinweis auf Lymphom,0
+MLL_233249,Kein Hinweis auf Lymphom,0
+MLL_233267,Kein Hinweis auf Lymphom,0
+MLL_233286,Kein Hinweis auf Lymphom,0
+MLL_203016,Kein Hinweis auf Lymphom,0
+MLL_233295,Kein Hinweis auf Lymphom,0
+MLL_233313,Kein Hinweis auf Lymphom,0
+MLL_233338,Kein Hinweis auf Lymphom,0
+MLL_233342,Kein Hinweis auf Lymphom,0
+MLL_233384,Kein Hinweis auf Lymphom,0
+MLL_203802,Kein Hinweis auf Lymphom,0
+MLL_203911,Kein Hinweis auf Lymphom,0
+MLL_203954,Kein Hinweis auf Lymphom,0
+MLL_233407,Kein Hinweis auf Lymphom,0
+MLL_233408,Kein Hinweis auf Lymphom,0
+MLL_233417,Kein Hinweis auf Lymphom,0
+MLL_233422,Kein Hinweis auf Lymphom,0
+MLL_233425,Kein Hinweis auf Lymphom,0
+MLL_233426,Kein Hinweis auf Lymphom,0
+MLL_204077,Kein Hinweis auf Lymphom,0
+MLL_204078,Kein Hinweis auf Lymphom,0
+MLL_233439,Kein Hinweis auf Lymphom,0
+MLL_233443,Kein Hinweis auf Lymphom,0
+MLL_233450,Kein Hinweis auf Lymphom,0
+MLL_233455,Kein Hinweis auf Lymphom,0
+MLL_233462,Kein Hinweis auf Lymphom,0
+MLL_233473,Kein Hinweis auf Lymphom,0
+MLL_233481,Kein Hinweis auf Lymphom,0
+MLL_233488,Kein Hinweis auf Lymphom,0
+MLL_204809,Kein Hinweis auf Lymphom,0
+MLL_204771,Kein Hinweis auf Lymphom,0
+MLL_233547,Kein Hinweis auf Lymphom,0
+MLL_233567,Kein Hinweis auf Lymphom,0
+MLL_233574,Kein Hinweis auf Lymphom,0
+MLL_233588,Kein Hinweis auf Lymphom,0
+MLL_233592,Kein Hinweis auf Lymphom,0
+MLL_233607,Kein Hinweis auf Lymphom,0
+MLL_233610,Kein Hinweis auf Lymphom,0
+MLL_233615,Kein Hinweis auf Lymphom,0
+MLL_205602,Kein Hinweis auf Lymphom,0
+MLL_233635,Kein Hinweis auf Lymphom,0
+MLL_233636,Kein Hinweis auf Lymphom,0
+MLL_233648,Kein Hinweis auf Lymphom,0
+MLL_233663,Kein Hinweis auf Lymphom,0
+MLL_233664,Kein Hinweis auf Lymphom,0
+MLL_233675,Kein Hinweis auf Lymphom,0
+MLL_233707,Kein Hinweis auf Lymphom,0
+MLL_233719,Kein Hinweis auf Lymphom,0
+MLL_209904,Kein Hinweis auf Lymphom,0
+MLL_233728,Kein Hinweis auf Lymphom,0
+MLL_206492,Kein Hinweis auf Lymphom,0
+MLL_233742,Kein Hinweis auf Lymphom,0
+MLL_233745,Kein Hinweis auf Lymphom,0
+MLL_233747,Kein Hinweis auf Lymphom,0
+MLL_233760,Kein Hinweis auf Lymphom,0
+MLL_206651,Kein Hinweis auf Lymphom,0
+MLL_233763,Kein Hinweis auf Lymphom,0
+MLL_233783,Kein Hinweis auf Lymphom,0
+MLL_233784,Kein Hinweis auf Lymphom,0
+MLL_207017,Kein Hinweis auf Lymphom,0
+MLL_233825,Kein Hinweis auf Lymphom,0
+MLL_233830,Kein Hinweis auf Lymphom,0
+MLL_233834,Kein Hinweis auf Lymphom,0
+MLL_233852,Kein Hinweis auf Lymphom,0
+MLL_233857,Kein Hinweis auf Lymphom,0
+MLL_233865,Kein Hinweis auf Lymphom,0
+MLL_233868,Kein Hinweis auf Lymphom,0
+MLL_233875,Kein Hinweis auf Lymphom,0
+MLL_233881,Kein Hinweis auf Lymphom,0
+MLL_233882,Kein Hinweis auf Lymphom,0
+MLL_233899,Kein Hinweis auf Lymphom,0
+MLL_207512,Kein Hinweis auf Lymphom,0
+MLL_233902,Kein Hinweis auf Lymphom,0
+MLL_233922,Kein Hinweis auf Lymphom,0
+MLL_233925,Kein Hinweis auf Lymphom,0
+MLL_233931,Kein Hinweis auf Lymphom,0
+MLL_233953,Kein Hinweis auf Lymphom,0
+MLL_233959,Kein Hinweis auf Lymphom,0
+MLL_233963,Kein Hinweis auf Lymphom,0
+MLL_234003,Kein Hinweis auf Lymphom,0
+MLL_234016,Kein Hinweis auf Lymphom,0
+MLL_234018,Kein Hinweis auf Lymphom,0
+MLL_234037,Kein Hinweis auf Lymphom,0
+MLL_234060,Kein Hinweis auf Lymphom,0
+MLL_234073,Kein Hinweis auf Lymphom,0
+MLL_234079,Kein Hinweis auf Lymphom,0
+MLL_234082,Kein Hinweis auf Lymphom,0
+MLL_234085,Kein Hinweis auf Lymphom,0
+MLL_208337,Kein Hinweis auf Lymphom,0
+MLL_208661,Kein Hinweis auf Lymphom,0
+MLL_234139,Kein Hinweis auf Lymphom,0
+MLL_234371,Kein Hinweis auf Lymphom,0
+MLL_234150,Kein Hinweis auf Lymphom,0
+MLL_234151,Kein Hinweis auf Lymphom,0
+MLL_234156,Kein Hinweis auf Lymphom,0
+MLL_234167,Kein Hinweis auf Lymphom,0
+MLL_234168,Kein Hinweis auf Lymphom,0
+MLL_234169,Kein Hinweis auf Lymphom,0
+MLL_234174,Kein Hinweis auf Lymphom,0
+MLL_234184,Kein Hinweis auf Lymphom,0
+MLL_234189,Kein Hinweis auf Lymphom,0
+MLL_234188,Kein Hinweis auf Lymphom,0
+MLL_234204,Kein Hinweis auf Lymphom,0
+MLL_209619,Kein Hinweis auf Lymphom,0
+MLL_209215,Kein Hinweis auf Lymphom,0
+MLL_234258,Kein Hinweis auf Lymphom,0
+MLL_234261,Kein Hinweis auf Lymphom,0
+MLL_234266,Kein Hinweis auf Lymphom,0
+MLL_234271,Kein Hinweis auf Lymphom,0
+MLL_209872,Kein Hinweis auf Lymphom,0
+MLL_234322,Kein Hinweis auf Lymphom,0
+MLL_234358,Kein Hinweis auf Lymphom,0
+MLL_210098,Kein Hinweis auf Lymphom,0
+MLL_234370,Kein Hinweis auf Lymphom,0
+MLL_234377,Kein Hinweis auf Lymphom,0
+MLL_234378,Kein Hinweis auf Lymphom,0
+MLL_234376,Kein Hinweis auf Lymphom,0
+MLL_234383,Kein Hinweis auf Lymphom,0
+MLL_234385,Kein Hinweis auf Lymphom,0
+MLL_234397,Kein Hinweis auf Lymphom,0
+MLL_234407,Kein Hinweis auf Lymphom,0
+MLL_234408,Kein Hinweis auf Lymphom,0
+MLL_234420,Kein Hinweis auf Lymphom,0
+MLL_234421,Kein Hinweis auf Lymphom,0
+MLL_234432,Kein Hinweis auf Lymphom,0
+MLL_234444,Kein Hinweis auf Lymphom,0
+MLL_234447,Kein Hinweis auf Lymphom,0
+MLL_234458,Kein Hinweis auf Lymphom,0
+MLL_234464,Kein Hinweis auf Lymphom,0
+MLL_234473,Kein Hinweis auf Lymphom,0
+MLL_210786,Kein Hinweis auf Lymphom,0
+MLL_234483,Kein Hinweis auf Lymphom,0
+MLL_234485,Kein Hinweis auf Lymphom,0
+MLL_234488,Kein Hinweis auf Lymphom,0
+MLL_234511,Kein Hinweis auf Lymphom,0
+MLL_234532,Kein Hinweis auf Lymphom,0
+MLL_234539,Kein Hinweis auf Lymphom,0
+MLL_234690,Kein Hinweis auf Lymphom,0
+MLL_234572,Kein Hinweis auf Lymphom,0
+MLL_234585,Kein Hinweis auf Lymphom,0
+MLL_234628,Kein Hinweis auf Lymphom,0
+MLL_234634,Kein Hinweis auf Lymphom,0
+MLL_234652,Kein Hinweis auf Lymphom,0
+MLL_234665,Kein Hinweis auf Lymphom,0
+MLL_234668,Kein Hinweis auf Lymphom,0
+MLL_234671,Kein Hinweis auf Lymphom,0
+MLL_234707,Kein Hinweis auf Lymphom,0
+MLL_234735,Kein Hinweis auf Lymphom,0
+MLL_234768,Kein Hinweis auf Lymphom,0
+MLL_234772,Kein Hinweis auf Lymphom,0
+MLL_212910,Kein Hinweis auf Lymphom,0
+MLL_214580,Kein Hinweis auf Lymphom,0
+MLL_234791,Kein Hinweis auf Lymphom,0
+MLL_234884,Kein Hinweis auf Lymphom,0
+MLL_234810,Kein Hinweis auf Lymphom,0
+MLL_234815,Kein Hinweis auf Lymphom,0
+MLL_234822,Kein Hinweis auf Lymphom,0
+MLL_234835,Kein Hinweis auf Lymphom,0
+MLL_234843,Kein Hinweis auf Lymphom,0
+MLL_234856,Kein Hinweis auf Lymphom,0
+MLL_234858,Kein Hinweis auf Lymphom,0
+MLL_234860,Kein Hinweis auf Lymphom,0
+MLL_234862,Kein Hinweis auf Lymphom,0
+MLL_213504,Kein Hinweis auf Lymphom,0
+MLL_235222,Kein Hinweis auf Lymphom,0
+MLL_234881,Kein Hinweis auf Lymphom,0
+MLL_234882,Kein Hinweis auf Lymphom,0
+MLL_234891,Kein Hinweis auf Lymphom,0
+MLL_234901,Kein Hinweis auf Lymphom,0
+MLL_234905,Kein Hinweis auf Lymphom,0
+MLL_234912,Kein Hinweis auf Lymphom,0
+MLL_234922,Kein Hinweis auf Lymphom,0
+MLL_234936,Kein Hinweis auf Lymphom,0
+MLL_214042,Kein Hinweis auf Lymphom,0
+MLL_234966,Kein Hinweis auf Lymphom,0
+MLL_234976,Kein Hinweis auf Lymphom,0
+MLL_234977,Kein Hinweis auf Lymphom,0
+MLL_234984,Kein Hinweis auf Lymphom,0
+MLL_234987,Kein Hinweis auf Lymphom,0
+MLL_234995,Kein Hinweis auf Lymphom,0
+MLL_235003,Kein Hinweis auf Lymphom,0
+MLL_214821,Kein Hinweis auf Lymphom,0
+MLL_214621,Kein Hinweis auf Lymphom,0
+MLL_235027,Kein Hinweis auf Lymphom,0
+MLL_235031,Kein Hinweis auf Lymphom,0
+MLL_235077,Kein Hinweis auf Lymphom,0
+MLL_235091,Kein Hinweis auf Lymphom,0
+MLL_235109,Kein Hinweis auf Lymphom,0
+MLL_235117,Kein Hinweis auf Lymphom,0
+MLL_235118,Kein Hinweis auf Lymphom,0
+MLL_235134,Kein Hinweis auf Lymphom,0
+MLL_235159,Kein Hinweis auf Lymphom,0
+MLL_235215,Kein Hinweis auf Lymphom,0
+MLL_235259,Kein Hinweis auf Lymphom,0
+MLL_235268,Kein Hinweis auf Lymphom,0
+MLL_235285,Kein Hinweis auf Lymphom,0
+MLL_235312,Kein Hinweis auf Lymphom,0
+MLL_235315,Kein Hinweis auf Lymphom,0
+MLL_232600,Kein Hinweis auf multiples Myelom,0
+MLL_233332,Kein Hinweis auf multiples Myelom,0
+MLL_234124,Kein Hinweis auf multiples Myelom,0
+MLL_234571,Kein Hinweis auf multiples Myelom,0
+MLL_234726,Kein Hinweis auf multiples Myelom,0
+MLL_235190,Kein Hinweis auf multiples Myelom,0
+MLL_195259,Kein Hinweis auf PNH,0
+MLL_191937,Kein Hinweis auf PNH,0
+MLL_204314,Kein Hinweis auf PNH,0
+MLL_233157,Kein Hinweis auf systemische Mastozytose,0
+MLL_233689,Kein Hinweis auf systemische Mastozytose,0
+MLL_233816,Kein Hinweis auf systemische Mastozytose,0
+MLL_234777,Kein Hinweis auf systemische Mastozytose,0
+MLL_184720,leeres Mark,0
+MLL_232611,leeres Mark,0
+MLL_194452,Leukoerythroblastisches Blutbild,0
+MLL_205574,Leukoerythroblastisches Blutbild,0
+MLL_234157,Leukoerythroblastisches Blutbild,0
+MLL_185318,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_227708,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_232568,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_232616,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_233605,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_233645,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_233793,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_234603,Lymphombefall möglich (nach Zytomorphologie),0
+MLL_175879,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232209,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232214,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232376,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_182348,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_194536,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_194915,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_195183,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_195388,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_195497,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232401,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_227473,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_231150,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_191276,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232509,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_231674,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232463,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232478,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232485,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232487,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232500,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232649,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232667,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232694,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232730,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232733,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232750,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232791,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232818,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_200944,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_232969,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233054,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233118,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233167,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233347,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_202898,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233328,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233401,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233409,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233540,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233667,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233718,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233785,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233798,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233835,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233861,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233887,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_233951,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234147,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234224,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_209328,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234265,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234360,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234384,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234427,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234489,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234520,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234636,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234667,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_212312,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234754,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_234918,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235046,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235060,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235102,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235197,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235228,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235294,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235305,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_235335,Lymphombefall zytomorphologisch nicht nachweisbar,0
+MLL_176116,Mastozytose,0
+MLL_232035,Mastozytose,0
+MLL_181403,Mastozytose,0
+MLL_181676,Mastozytose,0
+MLL_232323,Mastozytose,0
+MLL_194857,Mastozytose,0
+MLL_232418,Mastozytose,0
+MLL_232668,Mastozytose,0
+MLL_232690,Mastozytose,0
+MLL_233219,Mastozytose,0
+MLL_204942,Mastozytose,0
+MLL_203787,Mastozytose,0
+MLL_233451,Mastozytose,0
+MLL_234190,Mastozytose,0
+MLL_234211,Mastozytose,0
+MLL_211723,Mastozytose,0
+MLL_232954,Mastozytose mit assoziierter hämatologischer Neoplasie (SM-AHN),0
+MLL_210627,Mastozytose mit assoziierter hämatologischer Neoplasie (SM-AHN),0
+MLL_215036,Mastozytose mit assoziierter hämatologischer Neoplasie (SM-AHN),0
+MLL_235232,Mastozytose mit assoziierter hämatologischer Neoplasie (SM-AHN),0
+MLL_232130,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_232278,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_227811,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_232627,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_232767,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_232979,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_233176,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_210033,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_233833,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_235166,Mastozytose zytomorphologisch nicht nachweisbar,0
+MLL_176091,MDS möglich,0
+MLL_176118,MDS möglich,0
+MLL_176220,MDS möglich,0
+MLL_180575,MDS möglich,0
+MLL_180961,MDS möglich,0
+MLL_232163,MDS möglich,0
+MLL_232221,MDS möglich,0
+MLL_232281,MDS möglich,0
+MLL_232299,MDS möglich,0
+MLL_232334,MDS möglich,0
+MLL_232349,MDS möglich,0
+MLL_194250,MDS möglich,0
+MLL_195348,MDS möglich,0
+MLL_185277,MDS möglich,0
+MLL_185515,MDS möglich,0
+MLL_226707,MDS möglich,0
+MLL_185654,MDS möglich,0
+MLL_226871,MDS möglich,0
+MLL_226890,MDS möglich,0
+MLL_185815,MDS möglich,0
+MLL_185937,MDS möglich,0
+MLL_227505,MDS möglich,0
+MLL_190848,MDS möglich,0
+MLL_190956,MDS möglich,0
+MLL_191081,MDS möglich,0
+MLL_191105,MDS möglich,0
+MLL_231092,MDS möglich,0
+MLL_191287,MDS möglich,0
+MLL_191473,MDS möglich,0
+MLL_192148,MDS möglich,0
+MLL_232435,MDS möglich,0
+MLL_192341,MDS möglich,0
+MLL_192405,MDS möglich,0
+MLL_192442,MDS möglich,0
+MLL_232513,MDS möglich,0
+MLL_232514,MDS möglich,0
+MLL_193282,MDS möglich,0
+MLL_193495,MDS möglich,0
+MLL_193619,MDS möglich,0
+MLL_193735,MDS möglich,0
+MLL_195929,MDS möglich,0
+MLL_232793,MDS möglich,0
+MLL_232801,MDS möglich,0
+MLL_232937,MDS möglich,0
+MLL_200954,MDS möglich,0
+MLL_200924,MDS möglich,0
+MLL_200959,MDS möglich,0
+MLL_201144,MDS möglich,0
+MLL_201492,MDS möglich,0
+MLL_233071,MDS möglich,0
+MLL_233079,MDS möglich,0
+MLL_233081,MDS möglich,0
+MLL_233097,MDS möglich,0
+MLL_201965,MDS möglich,0
+MLL_202090,MDS möglich,0
+MLL_202048,MDS möglich,0
+MLL_202622,MDS möglich,0
+MLL_233287,MDS möglich,0
+MLL_203343,MDS möglich,0
+MLL_203382,MDS möglich,0
+MLL_204134,MDS möglich,0
+MLL_205230,MDS möglich,0
+MLL_233566,MDS möglich,0
+MLL_233611,MDS möglich,0
+MLL_205722,MDS möglich,0
+MLL_206095,MDS möglich,0
+MLL_206340,MDS möglich,0
+MLL_207244,MDS möglich,0
+MLL_207748,MDS möglich,0
+MLL_208526,MDS möglich,0
+MLL_208752,MDS möglich,0
+MLL_209533,MDS möglich,0
+MLL_234274,MDS möglich,0
+MLL_234439,MDS möglich,0
+MLL_210764,MDS möglich,0
+MLL_210772,MDS möglich,0
+MLL_211142,MDS möglich,0
+MLL_211427,MDS möglich,0
+MLL_211835,MDS möglich,0
+MLL_234741,MDS möglich,0
+MLL_212527,MDS möglich,0
+MLL_212954,MDS möglich,0
+MLL_234820,MDS möglich,0
+MLL_214462,MDS möglich,0
+MLL_214482,MDS möglich,0
+MLL_214612,MDS möglich,0
+MLL_215067,MDS möglich,0
+MLL_215145,MDS möglich,0
+MLL_215299,MDS möglich,0
+MLL_215577,MDS möglich,0
+MLL_235243,MDS möglich,0
+MLL_216376,MDS möglich,0
+MLL_193626,MDS possible,0
+MLL_231472,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208011,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_231998,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_176137,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232021,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_180880,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_180455,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232066,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232095,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232098,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_180719,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_180812,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232160,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232164,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232188,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_181316,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_181406,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_181544,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232279,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232290,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_181829,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232350,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194093,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_184974,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232385,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194356,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194485,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194583,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_182697,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193934,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_184550,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_184675,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_195057,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_184895,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_195374,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_185323,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202378,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_185437,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_185626,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_226761,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_226869,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_226913,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_226969,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_185858,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_227105,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_185909,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_190455,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_190460,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_190807,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_190855,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_227879,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_190923,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191011,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191202,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191464,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191645,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_231512,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191813,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_191818,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_231672,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_192045,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_192066,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_192070,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_192212,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232450,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_192987,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232524,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232540,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193148,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232557,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193189,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193222,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193393,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193415,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193472,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193544,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232630,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232646,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193736,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193737,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_195874,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232679,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193828,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193902,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193918,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193973,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232734,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_195636,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_195936,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232800,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_200681,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232899,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_200878,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232943,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_200972,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201065,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201090,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201132,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233006,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233017,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201309,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233040,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203032,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201488,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201538,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201516,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233065,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233089,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201726,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201819,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233123,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_201905,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202065,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202177,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202194,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202196,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233207,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202664,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202680,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202895,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202869,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203011,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203102,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203138,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203415,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203342,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233353,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203523,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203605,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203609,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203704,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213955,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203724,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203768,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_203998,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_204241,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233456,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233465,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_204221,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233483,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233484,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233523,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_204889,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_204974,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_204993,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_205001,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_205076,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233569,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233652,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233658,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206160,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206431,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233768,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206740,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206942,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_207068,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233839,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_207105,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233866,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_207443,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_207572,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_209065,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233974,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233978,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208054,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234023,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234024,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234042,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208261,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208333,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208589,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234153,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208768,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_209145,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_209371,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_209670,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_209966,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_210453,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_210472,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_210501,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_210890,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234534,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211226,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234568,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211602,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211677,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234620,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211803,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212082,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212326,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212442,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212542,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234759,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212995,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213094,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213097,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213401,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213521,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213642,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234906,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213735,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213782,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234956,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234975,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_214460,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_235063,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_215066,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_215420,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_215569,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_215953,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_235265,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_216306,MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_216073,MDS/AML borderline,0
+MLL_180981,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_232341,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_181985,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_232594,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_195714,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_201835,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_207678,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_208021,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_234525,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_214589,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_216048,MDS/AML-Grenzbefund nach Zytomorphologie,0
+MLL_232033,MDS/MPN nicht sicher nachweisbar,0
+MLL_180591,MDS/MPN nicht sicher nachweisbar,0
+MLL_232196,MDS/MPN nicht sicher nachweisbar,0
+MLL_182120,MDS/MPN nicht sicher nachweisbar,0
+MLL_182252,MDS/MPN nicht sicher nachweisbar,0
+MLL_194172,MDS/MPN nicht sicher nachweisbar,0
+MLL_185049,MDS/MPN nicht sicher nachweisbar,0
+MLL_234013,MDS/MPN nicht sicher nachweisbar,0
+MLL_234053,MDS/MPN nicht sicher nachweisbar,0
+MLL_212733,MDS/MPN nicht sicher nachweisbar,0
+MLL_214961,MDS/MPN nicht sicher nachweisbar,0
+MLL_215632,MDS/MPN nicht sicher nachweisbar,0
+MLL_235271,MDS/MPN nicht sicher nachweisbar,0
+MLL_175995,"MDS/MPN, U möglich",0
+MLL_231994,"MDS/MPN, U möglich",0
+MLL_180623,"MDS/MPN, U möglich",0
+MLL_194698,"MDS/MPN, U möglich",0
+MLL_226612,"MDS/MPN, U möglich",0
+MLL_200861,"MDS/MPN, U möglich",0
+MLL_193797,"MDS/MPN, U möglich",0
+MLL_233204,"MDS/MPN, U möglich",0
+MLL_233382,"MDS/MPN, U möglich",0
+MLL_213702,"MDS/MPN, U möglich",0
+MLL_213949,"MDS/MPN, U möglich",0
+MLL_214650,"MDS/MPN, U möglich",0
+MLL_180746,MDS/MPN-AML-Grenzbefund,0
+MLL_191931,MDS/MPN-AML-Grenzbefund,0
+MLL_211272,MDS/MPN-AML-Grenzbefund,0
+MLL_232051,MGUS (Monoclonal gammopathy of undetermined significance),0
+MLL_232225,MGUS (Monoclonal gammopathy of undetermined significance),0
+MLL_194129,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232036,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232053,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232147,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232034,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232165,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232170,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232191,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232200,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232236,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232311,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232340,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232364,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232367,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232371,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194390,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194506,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194585,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194626,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194670,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194705,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194823,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_194951,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_195050,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_195202,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_195313,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_195400,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_185495,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232397,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_226818,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_226829,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_226960,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227017,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_185856,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227040,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227375,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227378,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227741,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227805,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_227834,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_230955,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_230965,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231033,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231035,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231099,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231223,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231373,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231420,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_231532,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_208590,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232455,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232456,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232493,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232516,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232517,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232520,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232545,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232546,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232547,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232552,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232563,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232585,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232599,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232623,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232676,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232693,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232715,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232737,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232756,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232765,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232785,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232799,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232826,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232847,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232903,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232906,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232924,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232955,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232963,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232978,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_232991,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233015,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233019,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233021,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_201753,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233053,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233077,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233094,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233116,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233122,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_201909,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233196,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233271,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233273,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233276,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233281,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233346,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233385,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233418,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_204055,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233454,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233489,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233506,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233556,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233587,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233608,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233669,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233670,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233685,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233762,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233815,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233822,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233837,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233838,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233842,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233859,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233893,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233905,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233920,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233929,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233935,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_233950,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234015,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234036,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234066,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234122,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234140,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234148,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234193,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234218,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234288,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234289,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234314,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234323,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234328,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234333,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234356,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234362,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234428,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234526,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234548,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234573,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234592,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234639,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234688,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234704,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234784,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234931,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234808,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234818,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234839,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234907,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234910,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234929,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234932,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234944,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234953,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234954,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234964,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_234983,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235004,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235015,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235028,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235092,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235110,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235125,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235163,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235227,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_215976,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235311,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235319,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_235333,"MGUS (zytomorphologisch, nach WHO 2017)",0
+MLL_195110,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_194976,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_232495,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_232689,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_196203,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_232960,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_233153,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_233315,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_233755,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234031,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234277,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234535,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234723,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234814,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234844,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_234915,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_235287,"MGUS IgM (zytomorphologisch, nach WHO 2017)",0
+MLL_210886,Monoclonal B-cell lymphocytosis - CLL-type,0
+MLL_181069,MPN in Blastenkrise,0
+MLL_233428,MPN in Blastenkrise,0
+MLL_214894,MPN in Blastenkrise,0
+MLL_216423,MPN in Blastenkrise,0
+MLL_232055,MPN möglich,0
+MLL_232068,MPN möglich,0
+MLL_185623,MPN möglich,0
+MLL_226682,MPN möglich,0
+MLL_227329,MPN möglich,0
+MLL_195902,MPN möglich,0
+MLL_232777,MPN möglich,0
+MLL_202032,MPN möglich,0
+MLL_233073,MPN möglich,0
+MLL_233182,MPN möglich,0
+MLL_203932,MPN möglich,0
+MLL_233495,MPN möglich,0
+MLL_233529,MPN möglich,0
+MLL_234012,MPN möglich,0
+MLL_234068,MPN möglich,0
+MLL_208827,MPN möglich,0
+MLL_234403,MPN möglich,0
+MLL_234522,MPN möglich,0
+MLL_235047,MPN möglich,0
+MLL_234588,MPN möglich,0
+MLL_234683,MPN möglich,0
+MLL_235149,MPN möglich,0
+MLL_235158,MPN möglich,0
+MLL_208702,MPN nicht sicher nachweisbar,0
+MLL_232010,MPN nicht sicher nachweisbar,0
+MLL_232118,MPN nicht sicher nachweisbar,0
+MLL_232193,MPN nicht sicher nachweisbar,0
+MLL_232202,MPN nicht sicher nachweisbar,0
+MLL_232208,MPN nicht sicher nachweisbar,0
+MLL_231721,MPN nicht sicher nachweisbar,0
+MLL_231875,MPN nicht sicher nachweisbar,0
+MLL_232469,MPN nicht sicher nachweisbar,0
+MLL_232510,MPN nicht sicher nachweisbar,0
+MLL_193965,MPN nicht sicher nachweisbar,0
+MLL_232769,MPN nicht sicher nachweisbar,0
+MLL_202922,MPN nicht sicher nachweisbar,0
+MLL_233270,MPN nicht sicher nachweisbar,0
+MLL_203452,MPN nicht sicher nachweisbar,0
+MLL_233373,MPN nicht sicher nachweisbar,0
+MLL_213259,MPN nicht sicher nachweisbar,0
+MLL_234315,MPN nicht sicher nachweisbar,0
+MLL_234359,MPN nicht sicher nachweisbar,0
+MLL_234510,MPN nicht sicher nachweisbar,0
+MLL_234546,MPN nicht sicher nachweisbar,0
+MLL_234783,MPN nicht sicher nachweisbar,0
+MLL_235016,MPN nicht sicher nachweisbar,0
+MLL_232351,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232199,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232313,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_194318,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_194624,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_194701,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_194848,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_195014,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_195180,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_195330,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232396,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_226644,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_226956,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_231236,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232447,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232470,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232519,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232558,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232596,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232615,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232618,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_232867,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233007,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233029,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233056,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233082,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233487,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233631,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233684,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233871,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233872,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_233919,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_234191,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_234264,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_234512,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_234691,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_235127,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_235308,Multiples Myelom zytomorphologisch nicht nachweisbar,0
+MLL_235071,Nicht auswertbar,0
+MLL_210435,No evidence of lymphoma,0
+MLL_215816,No morphological evidence for MDS,0
+MLL_201918,t-MDS möglich,0
+MLL_233194,t-MDS möglich,0
+MLL_206089,t-MDS möglich,0
+MLL_212961,t-MDS möglich,0
+MLL_235153,t-MDS möglich,0
+MLL_216090,t-MDS möglich,0
+MLL_175858,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232285,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_232372,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194242,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_193913,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_194024,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233023,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233108,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233152,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233166,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233195,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202853,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_202979,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206669,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206884,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_206916,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_233989,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_208451,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211086,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_211871,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234675,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_212153,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_213225,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_234850,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_235196,t-MDS zytomorphologisch nicht sicher nachweisbar,0
+MLL_181682,t-MDS/MPN möglich,0
+MLL_232827,t-MDS/MPN möglich,0
+MLL_213661,t-MDS/MPN nicht sicher nachweisbar,0
+MLL_196204,t-MDS/t-AML Grenzbefund,0
+MLL_232229,Tumorzellen,0
+MLL_194797,Tumorzellen,0
+MLL_231895,Tumorzellen,0
+MLL_232473,Tumorzellen,0
+MLL_232725,Tumorzellen,0
+MLL_233579,Tumorzellen,0
+MLL_234467,Tumorzellen,0
+MLL_234623,Tumorzellen,0
+MLL_234056,unclear changes,0
+MLL_210320,unklare Veränderungen,0
+MLL_232226,unklare Veränderungen,0
+MLL_176314,unklare Veränderungen,0
+MLL_232137,unklare Veränderungen,0
+MLL_181407,unklare Veränderungen,0
+MLL_232342,unklare Veränderungen,0
+MLL_232346,unklare Veränderungen,0
+MLL_182230,unklare Veränderungen,0
+MLL_182295,unklare Veränderungen,0
+MLL_194537,unklare Veränderungen,0
+MLL_184669,unklare Veränderungen,0
+MLL_195427,unklare Veränderungen,0
+MLL_227045,unklare Veränderungen,0
+MLL_190943,unklare Veränderungen,0
+MLL_231093,unklare Veränderungen,0
+MLL_231581,unklare Veränderungen,0
+MLL_193433,unklare Veränderungen,0
+MLL_231856,unklare Veränderungen,0
+MLL_232438,unklare Veränderungen,0
+MLL_192471,unklare Veränderungen,0
+MLL_232512,unklare Veränderungen,0
+MLL_232534,unklare Veränderungen,0
+MLL_193102,unklare Veränderungen,0
+MLL_193141,unklare Veränderungen,0
+MLL_232572,unklare Veränderungen,0
+MLL_232601,unklare Veränderungen,0
+MLL_193964,unklare Veränderungen,0
+MLL_232705,unklare Veränderungen,0
+MLL_195802,unklare Veränderungen,0
+MLL_200449,unklare Veränderungen,0
+MLL_196260,unklare Veränderungen,0
+MLL_232918,unklare Veränderungen,0
+MLL_232929,unklare Veränderungen,0
+MLL_200886,unklare Veränderungen,0
+MLL_201039,unklare Veränderungen,0
+MLL_233035,unklare Veränderungen,0
+MLL_233059,unklare Veränderungen,0
+MLL_201916,unklare Veränderungen,0
+MLL_202217,unklare Veränderungen,0
+MLL_233259,unklare Veränderungen,0
+MLL_203528,unklare Veränderungen,0
+MLL_233371,unklare Veränderungen,0
+MLL_233472,unklare Veränderungen,0
+MLL_204257,unklare Veränderungen,0
+MLL_206108,unklare Veränderungen,0
+MLL_206111,unklare Veränderungen,0
+MLL_233823,unklare Veränderungen,0
+MLL_207196,unklare Veränderungen,0
+MLL_233942,unklare Veränderungen,0
+MLL_233998,unklare Veränderungen,0
+MLL_234065,unklare Veränderungen,0
+MLL_208663,unklare Veränderungen,0
+MLL_234228,unklare Veränderungen,0
+MLL_234234,unklare Veränderungen,0
+MLL_209658,unklare Veränderungen,0
+MLL_210646,unklare Veränderungen,0
+MLL_234484,unklare Veränderungen,0
+MLL_234615,unklare Veränderungen,0
+MLL_234747,unklare Veränderungen,0
+MLL_234765,unklare Veränderungen,0
+MLL_213447,unklare Veränderungen,0
+MLL_214073,unklare Veränderungen,0
+MLL_215125,unklare Veränderungen,0
+MLL_215597,unklare Veränderungen,0
+MLL_235217,unklare Veränderungen,0
+MLL_235241,unklare Veränderungen,0
+MLL_215984,unklare Veränderungen,0
+MLL_235334,unklare Veränderungen,0
+MLL_235324,unklare Veränderungen,0
+MLL_216616,unklare Veränderungen,0
+MLL_191466,V.a. MDS,0
+MLL_192896,V.a. MDS,0
+MLL_193131,V.a. MDS,0
+MLL_195797,V.a. MDS,0
+MLL_200781,V.a. MDS,0
+MLL_205966,V.a. MDS,0
+MLL_209828,V.a. MDS,0
+MLL_233070,V.a. MPN,0
+MLL_233282,V.a. MPN,0
+MLL_234663,V.a. MPN,0
+MLL_234744,V.a. MPN,0
+MLL_226700,V.a. NHL,0
+MLL_232643,V.a. NHL,0
+MLL_232789,V.a. NHL,0
+MLL_233106,V.a. NHL,0
+MLL_227535,Vereinbar mit MGUS,0
+MLL_231372,Vereinbar mit MGUS,0
+MLL_232604,Vereinbar mit MGUS,0
+MLL_232861,Vereinbar mit MGUS,0
+MLL_233042,Vereinbar mit MGUS,0
+MLL_233105,Vereinbar mit MGUS,0
+MLL_202354,Vereinbar mit MGUS,0
+MLL_233237,Vereinbar mit MGUS,0
+MLL_233351,Vereinbar mit MGUS,0
+MLL_233395,Vereinbar mit MGUS,0
+MLL_233676,Vereinbar mit MGUS,0
+MLL_233744,Vereinbar mit MGUS,0
+MLL_233749,Vereinbar mit MGUS,0
+MLL_234009,Vereinbar mit MGUS,0
+MLL_234176,Vereinbar mit MGUS,0
+MLL_234177,Vereinbar mit MGUS,0
+MLL_234203,Vereinbar mit MGUS,0
+MLL_234331,Vereinbar mit MGUS,0
+MLL_234340,Vereinbar mit MGUS,0
+MLL_234616,Vereinbar mit MGUS,0
+MLL_234836,Vereinbar mit MGUS,0
+MLL_214860,Vereinbar mit MGUS,0
+MLL_235119,Vereinbar mit MGUS,0
+MLL_235188,Vereinbar mit MGUS,0
+MLL_233691,Vereinbar mit systemischer Mastozytose,0
+MLL_233806,Vereinbar mit systemischer Mastozytose,0
+MLL_234582,Vereinbar mit systemischer Mastozytose,0

@@ -1,0 +1,8 @@
+diagnose,label
+Acute leukaemia,0
+Lymphoma,1
+MDS,2
+MDS / MPN,3
+MPN,4
+No malignancy,5
+Plasma cell neoplasm,6

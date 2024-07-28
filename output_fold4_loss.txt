@@ -1,0 +1,992 @@
+Results are saved in:  Results_fold4
+
+Initialize datasets...
+Found device:  1 x  cuda
+ncpu=128
+Reading files from:  data_cross_val/data_fold_4
+Initialize dataloaders...
+Datoladers are ready..
+ViTMiL(
+  (vit): DinoVisionTransformer(
+    (patch_embed): PatchEmbed(
+      (proj): Conv2d(3, 768, kernel_size=(14, 14), stride=(14, 14))
+      (norm): Identity()
+    )
+    (blocks): ModuleList(
+      (0-11): 12 x NestedTensorBlock(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): MemEffAttention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+    )
+    (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+    (head): Identity()
+  )
+  (transformer): Transformer(
+    (projection): Sequential(
+      (0): Linear(in_features=768, out_features=512, bias=True)
+      (1): ReLU()
+    )
+    (transformer): TransformerBlocks(
+      (layers): ModuleList(
+        (0-1): 2 x ModuleList(
+          (0): PreNorm(
+            (fn): Attention(
+              (attend): Softmax(dim=-1)
+              (to_qkv): Linear(in_features=512, out_features=1536, bias=False)
+              (to_out): Sequential(
+                (0): Linear(in_features=512, out_features=512, bias=True)
+                (1): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          )
+          (1): PreNorm(
+            (fn): FeedForward(
+              (net): Sequential(
+                (0): Linear(in_features=512, out_features=512, bias=True)
+                (1): GELU(approximate='none')
+                (2): Dropout(p=0.1, inplace=False)
+                (3): Linear(in_features=512, out_features=512, bias=True)
+                (4): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+      )
+    )
+    (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (mlp): Sequential(
+    (0): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (1): Linear(in_features=512, out_features=64, bias=True)
+    (2): ReLU()
+    (3): Linear(in_features=64, out_features=7, bias=True)
+  )
+)
+Setup complete.
+
+Using ReduceLROnPlateau with loss
+Starting training
+- ep: 1/50, loss: 1.752, acc: 0.345, f1_macro: 0.179, 3104s, train
+- ep: 1/50, loss: 1.620, acc: 0.361, f1_macro: 0.364, 742s, val
+Best Loss!
+- ep: 2/50, loss: 1.566, acc: 0.400, f1_macro: 0.266, 2073s, train
+- ep: 2/50, loss: 1.425, acc: 0.460, f1_macro: 0.389, 675s, val
+Best Loss!
+- ep: 3/50, loss: 1.400, acc: 0.501, f1_macro: 0.391, 2006s, train
+- ep: 3/50, loss: 1.294, acc: 0.538, f1_macro: 0.411, 674s, val
+Best Loss!
+- ep: 4/50, loss: 1.272, acc: 0.542, f1_macro: 0.432, 2100s, train
+- ep: 4/50, loss: 1.205, acc: 0.576, f1_macro: 0.461, 691s, val
+Best Loss!
+- ep: 5/50, loss: 1.178, acc: 0.587, f1_macro: 0.508, 2026s, train
+- ep: 5/50, loss: 1.147, acc: 0.598, f1_macro: 0.497, 674s, val
+Best Loss!
+- ep: 6/50, loss: 1.103, acc: 0.610, f1_macro: 0.546, 2004s, train
+- ep: 6/50, loss: 1.090, acc: 0.608, f1_macro: 0.534, 673s, val
+Best Loss!
+- ep: 7/50, loss: 1.059, acc: 0.620, f1_macro: 0.494, 2007s, train
+- ep: 7/50, loss: 1.048, acc: 0.617, f1_macro: 0.484, 680s, val
+Best Loss!
+- ep: 8/50, loss: 1.002, acc: 0.649, f1_macro: 0.538, 2056s, train
+- ep: 8/50, loss: 1.029, acc: 0.630, f1_macro: 0.562, 672s, val
+Best Loss!
+- ep: 9/50, loss: 0.957, acc: 0.663, f1_macro: 0.552, 2012s, train
+- ep: 9/50, loss: 1.006, acc: 0.644, f1_macro: 0.510, 681s, val
+Best Loss!
+- ep: 10/50, loss: 0.913, acc: 0.687, f1_macro: 0.600, 2343s, train
+- ep: 10/50, loss: 0.975, acc: 0.649, f1_macro: 0.529, 687s, val
+Best Loss!
+- ep: 11/50, loss: 0.867, acc: 0.706, f1_macro: 0.622, 2041s, train
+- ep: 11/50, loss: 0.949, acc: 0.661, f1_macro: 0.542, 676s, val
+Best Loss!
+- ep: 12/50, loss: 0.829, acc: 0.709, f1_macro: 0.628, 2090s, train
+- ep: 12/50, loss: 0.936, acc: 0.661, f1_macro: 0.545, 685s, val
+Best Loss!
+- ep: 13/50, loss: 0.790, acc: 0.738, f1_macro: 0.665, 2007s, train
+- ep: 13/50, loss: 0.950, acc: 0.659, f1_macro: 0.544, 672s, val
+- ep: 14/50, loss: 0.754, acc: 0.749, f1_macro: 0.687, 2004s, train
+- ep: 14/50, loss: 0.909, acc: 0.680, f1_macro: 0.583, 674s, val
+Best Loss!
+- ep: 15/50, loss: 0.716, acc: 0.759, f1_macro: 0.690, 2004s, train
+- ep: 15/50, loss: 0.906, acc: 0.685, f1_macro: 0.576, 674s, val
+Best Loss!
+- ep: 16/50, loss: 0.682, acc: 0.775, f1_macro: 0.717, 2010s, train
+- ep: 16/50, loss: 0.897, acc: 0.678, f1_macro: 0.584, 675s, val
+Best Loss!
+- ep: 17/50, loss: 0.654, acc: 0.793, f1_macro: 0.744, 2010s, train
+- ep: 17/50, loss: 0.888, acc: 0.685, f1_macro: 0.587, 675s, val
+Best Loss!
+- ep: 18/50, loss: 0.626, acc: 0.792, f1_macro: 0.743, 2007s, train
+- ep: 18/50, loss: 0.914, acc: 0.680, f1_macro: 0.586, 674s, val
+- ep: 19/50, loss: 0.586, acc: 0.805, f1_macro: 0.755, 2011s, train
+- ep: 19/50, loss: 0.900, acc: 0.678, f1_macro: 0.577, 686s, val
+- ep: 20/50, loss: 0.551, acc: 0.820, f1_macro: 0.783, 2039s, train
+- ep: 20/50, loss: 0.930, acc: 0.690, f1_macro: 0.593, 674s, val
+- ep: 21/50, loss: 0.512, acc: 0.838, f1_macro: 0.805, 2006s, train
+- ep: 21/50, loss: 0.907, acc: 0.692, f1_macro: 0.593, 674s, val
+- ep: 22/50, loss: 0.476, acc: 0.854, f1_macro: 0.822, 2011s, train
+- ep: 22/50, loss: 0.896, acc: 0.702, f1_macro: 0.603, 673s, val
+- ep: 23/50, loss: 0.444, acc: 0.866, f1_macro: 0.835, 2011s, train
+- ep: 23/50, loss: 0.918, acc: 0.683, f1_macro: 0.585, 674s, val
+Epoch 00023: reducing learning rate of group 0 to 2.0000e-06.
+- ep: 24/50, loss: 0.400, acc: 0.890, f1_macro: 0.864, 2005s, train
+- ep: 24/50, loss: 0.905, acc: 0.688, f1_macro: 0.591, 674s, val
+- ep: 25/50, loss: 0.389, acc: 0.901, f1_macro: 0.879, 2009s, train
+- ep: 25/50, loss: 0.906, acc: 0.692, f1_macro: 0.595, 672s, val
+- ep: 26/50, loss: 0.384, acc: 0.900, f1_macro: 0.877, 2033s, train
+- ep: 26/50, loss: 0.914, acc: 0.692, f1_macro: 0.598, 674s, val
+- ep: 27/50, loss: 0.381, acc: 0.895, f1_macro: 0.875, 2049s, train
+- ep: 27/50, loss: 0.908, acc: 0.697, f1_macro: 0.604, 674s, val
+Processing patient:  MLL_233521
+Processing patient:  MLL_234436
+Processing patient:  MLL_216626
+Processing patient:  MLL_233397
+Processing patient:  MLL_227726
+Processing patient:  MLL_202365
+Processing patient:  MLL_194081
+Processing patient:  MLL_241056
+Processing patient:  MLL_193056
+Processing patient:  MLL_233386
+Processing patient:  MLL_227377
+Processing patient:  MLL_206850
+Processing patient:  MLL_206949
+Processing patient:  MLL_234538
+Processing patient:  MLL_241235
+Processing patient:  MLL_227179
+Processing patient:  MLL_233544
+Processing patient:  MLL_234225
+Processing patient:  MLL_241168
+Processing patient:  MLL_234212
+Processing patient:  MLL_240916
+Processing patient:  MLL_233797
+Processing patient:  MLL_240987
+Processing patient:  MLL_213944
+Processing patient:  MLL_234390
+Processing patient:  MLL_240909
+Processing patient:  MLL_226694
+Processing patient:  MLL_233381
+Processing patient:  MLL_201297
+Processing patient:  MLL_215384
+Processing patient:  MLL_233130
+Processing patient:  MLL_240984
+Processing patient:  MLL_232551
+Processing patient:  MLL_227093
+Processing patient:  MLL_213092
+Processing patient:  MLL_241030
+Processing patient:  MLL_235034
+Processing patient:  MLL_231960
+Processing patient:  MLL_234806
+Processing patient:  MLL_213508
+Processing patient:  MLL_241137
+Processing patient:  MLL_231410
+Processing patient:  MLL_241130
+Processing patient:  MLL_190583
+Processing patient:  MLL_234263
+Processing patient:  MLL_241128
+Processing patient:  MLL_234431
+Processing patient:  MLL_166131
+Processing patient:  MLL_213741
+Processing patient:  MLL_181736
+Processing patient:  MLL_202176
+Processing patient:  MLL_230905
+Processing patient:  MLL_227604
+Processing patient:  MLL_158230
+Processing patient:  MLL_232439
+Processing patient:  MLL_241264
+Processing patient:  MLL_234746
+Processing patient:  MLL_234195
+Processing patient:  MLL_194708
+Processing patient:  MLL_233995
+Processing patient:  MLL_191004
+Processing patient:  MLL_231986
+Processing patient:  MLL_233628
+Processing patient:  MLL_202972
+Processing patient:  MLL_195461
+Processing patient:  MLL_190598
+Processing patient:  MLL_234728
+Processing patient:  MLL_226603
+Processing patient:  MLL_192493
+Processing patient:  MLL_232332
+Processing patient:  MLL_234284
+Processing patient:  MLL_233348
+Processing patient:  MLL_234632
+Processing patient:  MLL_232348
+Processing patient:  MLL_207644
+Processing patient:  MLL_241065
+Processing patient:  MLL_241041
+Processing patient:  MLL_241082
+Processing patient:  MLL_233758
+Processing patient:  MLL_176222
+Processing patient:  MLL_194450
+Processing patient:  MLL_226738
+Processing patient:  MLL_204817
+Processing patient:  MLL_215373
+Processing patient:  MLL_235212
+Processing patient:  MLL_210215
+Processing patient:  MLL_233824
+Processing patient:  MLL_231977
+Processing patient:  MLL_240945
+Processing patient:  MLL_234861
+Processing patient:  MLL_232629
+Processing patient:  MLL_194539
+Processing patient:  MLL_233706
+Processing patient:  MLL_235155
+Processing patient:  MLL_195582
+Processing patient:  MLL_240846
+Processing patient:  MLL_182623
+Processing patient:  MLL_234633
+Processing patient:  MLL_206255
+Processing patient:  MLL_233030
+Processing patient:  MLL_234829
+Processing patient:  MLL_194123
+Processing patient:  MLL_240972
+Processing patient:  MLL_182515
+Processing patient:  MLL_180653
+Processing patient:  MLL_155141
+Processing patient:  MLL_240882
+Processing patient:  MLL_240983
+Processing patient:  MLL_155245
+Processing patient:  MLL_205913
+Processing patient:  MLL_215746
+Processing patient:  MLL_232915
+Processing patient:  MLL_234797
+Processing patient:  MLL_231972
+Processing patient:  MLL_232951
+Processing patient:  MLL_233723
+Processing patient:  MLL_240926
+Processing patient:  MLL_232590
+Processing patient:  MLL_207615
+Processing patient:  MLL_240897
+Processing patient:  MLL_233522
+Processing patient:  MLL_232724
+Processing patient:  MLL_184891
+Processing patient:  MLL_240851
+Processing patient:  MLL_240942
+Processing patient:  MLL_208800
+Processing patient:  MLL_232253
+Processing patient:  MLL_136872
+Processing patient:  MLL_241147
+Processing patient:  MLL_241196
+Processing patient:  MLL_240966
+Processing patient:  MLL_233548
+Processing patient:  MLL_241100
+Processing patient:  MLL_231461
+Processing patient:  MLL_241099
+Processing patient:  MLL_233820
+Processing patient:  MLL_211423
+Processing patient:  MLL_232018
+Processing patient:  MLL_233210
+Processing patient:  MLL_234687
+Processing patient:  MLL_234776
+Processing patient:  MLL_190701
+Processing patient:  MLL_241020
+Processing patient:  MLL_241070
+Processing patient:  MLL_232459
+Processing patient:  MLL_233659
+Processing patient:  MLL_195062
+Processing patient:  MLL_227446
+Processing patient:  MLL_212078
+Processing patient:  MLL_241141
+Processing patient:  MLL_194767
+Processing patient:  MLL_232888
+Processing patient:  MLL_213439
+Processing patient:  MLL_235221
+Processing patient:  MLL_200491
+Processing patient:  MLL_207179
+Processing patient:  MLL_195536
+Processing patient:  MLL_233131
+Processing patient:  MLL_234645
+Processing patient:  MLL_240884
+Processing patient:  MLL_241213
+Processing patient:  MLL_232657
+Processing patient:  MLL_194664
+Processing patient:  MLL_192264
+Processing patient:  MLL_155296
+Processing patient:  MLL_202000
+Processing patient:  MLL_233119
+Processing patient:  MLL_232392
+Processing patient:  MLL_241135
+Processing patient:  MLL_227164
+Processing patient:  MLL_241126
+Processing patient:  MLL_233858
+Processing patient:  MLL_233688
+Processing patient:  MLL_227594
+Processing patient:  MLL_241228
+Processing patient:  MLL_234394
+Processing patient:  MLL_232741
+Processing patient:  MLL_234611
+Processing patient:  MLL_201964
+Processing patient:  MLL_241272
+Processing patient:  MLL_194921
+Processing patient:  MLL_209391
+Processing patient:  MLL_208339
+Processing patient:  MLL_233774
+Processing patient:  MLL_226690
+Processing patient:  MLL_182407
+Processing patient:  MLL_233344
+Processing patient:  MLL_233183
+Processing patient:  MLL_209730
+Processing patient:  MLL_235128
+Processing patient:  MLL_233159
+Processing patient:  MLL_158642
+Processing patient:  MLL_240890
+Processing patient:  MLL_233787
+Processing patient:  MLL_207451
+Processing patient:  MLL_190328
+Processing patient:  MLL_226774
+Processing patient:  MLL_234941
+Processing patient:  MLL_203126
+Processing patient:  MLL_200963
+Processing patient:  MLL_227501
+Processing patient:  MLL_241181
+Processing patient:  MLL_233782
+Processing patient:  MLL_235030
+Processing patient:  MLL_231822
+Processing patient:  MLL_211073
+Processing patient:  MLL_241271
+Processing patient:  MLL_240860
+Processing patient:  MLL_233364
+Processing patient:  MLL_201718
+Processing patient:  MLL_241036
+Processing patient:  MLL_234674
+Processing patient:  MLL_235213
+Processing patient:  MLL_208966
+Processing patient:  MLL_230945
+Processing patient:  MLL_203226
+Processing patient:  MLL_232639
+Processing patient:  MLL_195861
+Processing patient:  MLL_231616
+Processing patient:  MLL_201072
+Processing patient:  MLL_234321
+Processing patient:  MLL_181105
+Processing patient:  MLL_241226
+Processing patient:  MLL_209210
+Processing patient:  MLL_191808
+Processing patient:  MLL_192114
+Processing patient:  MLL_240879
+Processing patient:  MLL_233850
+Processing patient:  MLL_184976
+Processing patient:  MLL_232233
+Processing patient:  MLL_232873
+Processing patient:  MLL_241008
+Processing patient:  MLL_241172
+Processing patient:  MLL_184769
+Processing patient:  MLL_226724
+Processing patient:  MLL_227287
+Processing patient:  MLL_234259
+Processing patient:  MLL_241111
+Processing patient:  MLL_233855
+Processing patient:  MLL_233068
+Processing patient:  MLL_215182
+Processing patient:  MLL_233429
+Processing patient:  MLL_215781
+Processing patient:  MLL_232786
+Processing patient:  MLL_234945
+Processing patient:  MLL_241031
+Processing patient:  MLL_186052
+Processing patient:  MLL_195576
+Processing patient:  MLL_231726
+Processing patient:  MLL_181876
+Processing patient:  MLL_195561
+Processing patient:  MLL_213098
+Processing patient:  MLL_234072
+Processing patient:  MLL_234493
+Processing patient:  MLL_232179
+Processing patient:  MLL_234198
+Processing patient:  MLL_233461
+Processing patient:  MLL_180639
+Processing patient:  MLL_241107
+Processing patient:  MLL_233807
+Processing patient:  MLL_194247
+Processing patient:  MLL_232862
+Processing patient:  MLL_202655
+Processing patient:  MLL_241273
+Processing patient:  MLL_234058
+Processing patient:  MLL_232890
+Processing patient:  MLL_233305
+Processing patient:  MLL_233126
+Processing patient:  MLL_241269
+Processing patient:  MLL_210348
+Processing patient:  MLL_241159
+Processing patient:  MLL_232670
+Processing patient:  MLL_155039
+Processing patient:  MLL_184970
+Processing patient:  MLL_234312
+Processing patient:  MLL_240848
+Processing patient:  MLL_202219
+Processing patient:  MLL_240960
+Processing patient:  MLL_240874
+Processing patient:  MLL_231641
+Processing patient:  MLL_202312
+Processing patient:  MLL_232553
+Processing patient:  MLL_202190
+Processing patient:  MLL_241073
+Processing patient:  MLL_234353
+Processing patient:  MLL_232238
+Processing patient:  MLL_233374
+Processing patient:  MLL_214273
+Processing patient:  MLL_193710
+Processing patient:  MLL_241173
+Processing patient:  MLL_234833
+Processing patient:  MLL_215782
+Processing patient:  MLL_207039
+Processing patient:  MLL_234387
+Processing patient:  MLL_241091
+Processing patient:  MLL_232560
+Processing patient:  MLL_240850
+Processing patient:  MLL_213538
+Processing patient:  MLL_203354
+Processing patient:  MLL_241088
+Processing patient:  MLL_194032
+Processing patient:  MLL_202350
+Processing patient:  MLL_233277
+Processing patient:  MLL_232638
+Processing patient:  MLL_234207
+Processing patient:  MLL_240857
+Processing patient:  MLL_234114
+Processing patient:  MLL_240954
+Processing patient:  MLL_231422
+Processing patient:  MLL_206500
+Processing patient:  MLL_195575
+Processing patient:  MLL_215075
+Processing patient:  MLL_233696
+Processing patient:  MLL_240864
+Processing patient:  MLL_182028
+Processing patient:  MLL_207916
+Processing patient:  MLL_234033
+Processing patient:  MLL_204779
+Processing patient:  MLL_241266
+Processing patient:  MLL_232366
+Processing patient:  MLL_201817
+Processing patient:  MLL_206639
+Processing patient:  MLL_232768
+Processing patient:  MLL_241268
+Processing patient:  MLL_234556
+Processing patient:  MLL_233537
+Processing patient:  MLL_209481
+Processing patient:  MLL_211756
+Processing patient:  MLL_191978
+Processing patient:  MLL_226626
+Processing patient:  MLL_232146
+Processing patient:  MLL_235229
+Processing patient:  MLL_204298
+Processing patient:  MLL_241059
+Processing patient:  MLL_240924
+Processing patient:  MLL_241195
+Processing patient:  MLL_191291
+Processing patient:  MLL_209580
+Processing patient:  MLL_210585
+Processing patient:  MLL_241217
+Processing patient:  MLL_234734
+Processing patient:  MLL_240876
+Processing patient:  MLL_241019
+Processing patient:  MLL_233981
+Processing patient:  MLL_232528
+Processing patient:  MLL_158246
+Processing patient:  MLL_232660
+Processing patient:  MLL_215492
+Processing patient:  MLL_233197
+Processing patient:  MLL_191701
+Processing patient:  MLL_233961
+Processing patient:  MLL_181355
+Processing patient:  MLL_232030
+Processing patient:  MLL_232252
+Processing patient:  MLL_240912
+Processing patient:  MLL_202227
+Processing patient:  MLL_207976
+Processing patient:  MLL_240989
+Processing patient:  MLL_202278
+Processing patient:  MLL_232759
+Processing patient:  MLL_241061
+Processing patient:  MLL_234642
+Processing patient:  MLL_208343
+Processing patient:  MLL_232356
+Processing patient:  MLL_234041
+Processing patient:  MLL_232907
+Processing patient:  MLL_240885
+Processing patient:  MLL_240920
+Processing patient:  MLL_234399
+Processing patient:  MLL_232275
+Processing patient:  MLL_234364
+Processing patient:  MLL_241274
+Processing patient:  MLL_195373
+Processing patient:  MLL_207820
+Processing patient:  MLL_233297
+Processing patient:  MLL_181665
+Processing patient:  MLL_234344
+Processing patient:  MLL_232204
+Processing patient:  MLL_234199
+Processing patient:  MLL_211113
+Processing patient:  MLL_241251
+Processing patient:  MLL_234440
+Processing patient:  MLL_234170
+Processing patient:  MLL_182267
+Processing patient:  MLL_233933
+Processing patient:  MLL_211541
+Processing patient:  MLL_241011
+Processing patient:  MLL_240866
+Processing patient:  MLL_211645
+Processing patient:  MLL_234696
+Processing patient:  MLL_240869
+Processing patient:  MLL_204220
+Processing patient:  MLL_232855
+Processing patient:  MLL_232309
+Processing patient:  MLL_231806
+Processing patient:  MLL_201540
+Processing patient:  MLL_232169
+Processing patient:  MLL_200451
+Processing patient:  MLL_233629
+Processing patient:  MLL_215607
+Processing patient:  MLL_233558
+Processing patient:  MLL_241187
+Processing patient:  MLL_234561
+Processing patient:  MLL_232189
+Processing patient:  MLL_182079
+Processing patient:  MLL_241142
+Processing patient:  MLL_241176
+Processing patient:  MLL_230924
+Processing patient:  MLL_232518
+Processing patient:  MLL_233304
+Processing patient:  MLL_240886
+Processing patient:  MLL_207507
+Processing patient:  MLL_211923
+- loss: 0.888, acc: 0.685, val
+Processing patient:  MLL_232964
+Processing patient:  MLL_233180
+Processing patient:  MLL_232692
+Processing patient:  MLL_241241
+Processing patient:  MLL_205579
+Processing patient:  MLL_202861
+Processing patient:  MLL_233936
+Processing patient:  MLL_241203
+Processing patient:  MLL_202325
+Processing patient:  MLL_207287
+Processing patient:  MLL_195928
+Processing patient:  MLL_241139
+Processing patient:  MLL_240935
+Processing patient:  MLL_195103
+Processing patient:  MLL_181353
+Processing patient:  MLL_182200
+Processing patient:  MLL_213601
+Processing patient:  MLL_241108
+Processing patient:  MLL_234067
+Processing patient:  MLL_233509
+Processing patient:  MLL_209794
+Processing patient:  MLL_231005
+Processing patient:  MLL_202835
+Processing patient:  MLL_210432
+Processing patient:  MLL_234192
+Processing patient:  MLL_241249
+Processing patient:  MLL_215304
+Processing patient:  MLL_235220
+Processing patient:  MLL_201026
+Processing patient:  MLL_232543
+Processing patient:  MLL_181241
+Processing patient:  MLL_214899
+Processing patient:  MLL_235072
+Processing patient:  MLL_227267
+Processing patient:  MLL_205601
+Processing patient:  MLL_233708
+Processing patient:  MLL_241211
+Processing patient:  MLL_232566
+Processing patient:  MLL_214375
+Processing patient:  MLL_181039
+Processing patient:  MLL_232807
+Processing patient:  MLL_241054
+Processing patient:  MLL_211220
+Processing patient:  MLL_241017
+Processing patient:  MLL_182686
+Processing patient:  MLL_241240
+Processing patient:  MLL_195327
+Processing patient:  MLL_195462
+Processing patient:  MLL_234637
+Processing patient:  MLL_191544
+Processing patient:  MLL_207972
+Processing patient:  MLL_216260
+Processing patient:  MLL_233444
+Processing patient:  MLL_233240
+Processing patient:  MLL_241010
+Processing patient:  MLL_234165
+Processing patient:  MLL_240900
+Processing patient:  MLL_194200
+Processing patient:  MLL_227407
+Processing patient:  MLL_232044
+Processing patient:  MLL_241113
+Processing patient:  MLL_241122
+Processing patient:  MLL_195474
+Processing patient:  MLL_234852
+Processing patient:  MLL_216389
+Processing patient:  MLL_202418
+Processing patient:  MLL_209249
+Processing patient:  MLL_195515
+Processing patient:  MLL_233903
+Processing patient:  MLL_206091
+Processing patient:  MLL_216456
+Processing patient:  MLL_206149
+Processing patient:  MLL_190760
+Processing patient:  MLL_240843
+Processing patient:  MLL_234075
+Processing patient:  MLL_233360
+Processing patient:  MLL_240842
+Processing patient:  MLL_190860
+Processing patient:  MLL_241003
+Processing patient:  MLL_232093
+Processing patient:  MLL_232168
+Processing patient:  MLL_235234
+Processing patient:  MLL_232031
+Processing patient:  MLL_240902
+Processing patient:  MLL_232934
+Processing patient:  MLL_241046
+Processing patient:  MLL_241255
+Processing patient:  MLL_234807
+Processing patient:  MLL_233258
+Processing patient:  MLL_190526
+Processing patient:  MLL_241080
+Processing patient:  MLL_191657
+Processing patient:  MLL_241060
+Processing patient:  MLL_195814
+Processing patient:  MLL_234750
+Processing patient:  MLL_211155
+Processing patient:  MLL_234236
+Processing patient:  MLL_232129
+Processing patient:  MLL_233172
+Processing patient:  MLL_182376
+Processing patient:  MLL_235165
+Processing patient:  MLL_235142
+Processing patient:  MLL_232347
+Processing patient:  MLL_176003
+Processing patient:  MLL_241218
+Processing patient:  MLL_241229
+Processing patient:  MLL_231168
+Processing patient:  MLL_235251
+Processing patient:  MLL_240978
+Processing patient:  MLL_206262
+Processing patient:  MLL_234886
+Processing patient:  MLL_241024
+Processing patient:  MLL_200682
+Processing patient:  MLL_204132
+Processing patient:  MLL_227725
+Processing patient:  MLL_241084
+Processing patient:  MLL_182206
+Processing patient:  MLL_233460
+Processing patient:  MLL_241005
+Processing patient:  MLL_232661
+Processing patient:  MLL_241131
+Processing patient:  MLL_241206
+Processing patient:  MLL_201878
+Processing patient:  MLL_184542
+Processing patient:  MLL_203828
+Processing patient:  MLL_195003
+Processing patient:  MLL_207773
+Processing patient:  MLL_209725
+Processing patient:  MLL_234656
+Processing patient:  MLL_233836
+Processing patient:  MLL_226934
+Processing patient:  MLL_232925
+Processing patient:  MLL_191371
+Processing patient:  MLL_235198
+Processing patient:  MLL_193418
+Processing patient:  MLL_176354
+Processing patient:  MLL_232056
+Processing patient:  MLL_180547
+Processing patient:  MLL_233621
+Processing patient:  MLL_226814
+Processing patient:  MLL_195009
+Processing patient:  MLL_209442
+Processing patient:  MLL_208764
+Processing patient:  MLL_232058
+Processing patient:  MLL_241021
+Processing patient:  MLL_196053
+Processing patient:  MLL_190821
+Processing patient:  MLL_234547
+Processing patient:  MLL_233093
+Processing patient:  MLL_235200
+Processing patient:  MLL_241263
+Processing patient:  MLL_233937
+Processing patient:  MLL_194233
+Processing patient:  MLL_234821
+Processing patient:  MLL_234800
+Processing patient:  MLL_232457
+Processing patient:  MLL_232171
+Processing patient:  MLL_241090
+Processing patient:  MLL_233912
+Processing patient:  MLL_234335
+Processing patient:  MLL_182782
+Processing patient:  MLL_235249
+Processing patient:  MLL_208547
+Processing patient:  MLL_234474
+Processing patient:  MLL_240919
+Processing patient:  MLL_234052
+Processing patient:  MLL_185682
+Processing patient:  MLL_209879
+Processing patient:  MLL_235132
+Processing patient:  MLL_233700
+Processing patient:  MLL_233781
+Processing patient:  MLL_233750
+Processing patient:  MLL_231688
+Processing patient:  MLL_182518
+Processing patient:  MLL_230900
+Processing patient:  MLL_202187
+Processing patient:  MLL_204065
+Processing patient:  MLL_204149
+Processing patient:  MLL_234924
+Processing patient:  MLL_231023
+Processing patient:  MLL_137127
+Processing patient:  MLL_216249
+Processing patient:  MLL_241163
+Processing patient:  MLL_211944
+Processing patient:  MLL_241238
+Processing patient:  MLL_233525
+Processing patient:  MLL_181500
+Processing patient:  MLL_227096
+Processing patient:  MLL_176328
+Processing patient:  MLL_185870
+Processing patient:  MLL_233804
+Processing patient:  MLL_185758
+Processing patient:  MLL_192941
+Processing patient:  MLL_240905
+Processing patient:  MLL_240947
+Processing patient:  MLL_232327
+Processing patient:  MLL_232483
+Processing patient:  MLL_232971
+Processing patient:  MLL_241146
+Processing patient:  MLL_215925
+Processing patient:  MLL_232398
+Processing patient:  MLL_241246
+Processing patient:  MLL_190785
+Processing patient:  MLL_227277
+Processing patient:  MLL_209388
+Processing patient:  MLL_233325
+Processing patient:  MLL_241144
+Processing patient:  MLL_240968
+Processing patient:  MLL_240863
+Processing patient:  MLL_240894
+Processing patient:  MLL_232852
+Processing patient:  MLL_241110
+Processing patient:  MLL_206393
+Processing patient:  MLL_213404
+Processing patient:  MLL_202527
+Processing patient:  MLL_233714
+Processing patient:  MLL_227749
+Processing patient:  MLL_214569
+Processing patient:  MLL_205348
+Processing patient:  MLL_241204
+Processing patient:  MLL_206691
+Processing patient:  MLL_231514
+Processing patient:  MLL_234305
+Processing patient:  MLL_213134
+Processing patient:  MLL_241174
+Processing patient:  MLL_234629
+Processing patient:  MLL_232787
+Processing patient:  MLL_241252
+Processing patient:  MLL_234664
+Processing patient:  MLL_208297
+Processing patient:  MLL_235266
+Processing patient:  MLL_235240
+Processing patient:  MLL_213018
+Processing patient:  MLL_241138
+Processing patient:  MLL_241081
+Processing patient:  MLL_232885
+Processing patient:  MLL_241077
+Processing patient:  MLL_240908
+Processing patient:  MLL_241121
+Processing patient:  MLL_209574
+Processing patient:  MLL_233173
+Processing patient:  MLL_234537
+Processing patient:  MLL_232555
+Processing patient:  MLL_234144
+Processing patient:  MLL_232832
+Processing patient:  MLL_234900
+Processing patient:  MLL_241231
+Processing patient:  MLL_232749
+Processing patient:  MLL_232080
+Processing patient:  MLL_195285
+Processing patient:  MLL_233597
+Processing patient:  MLL_233988
+Processing patient:  MLL_234998
+Processing patient:  MLL_200654
+Processing patient:  MLL_207467
+Processing patient:  MLL_232159
+Processing patient:  MLL_205483
+Processing patient:  MLL_232824
+Processing patient:  MLL_231098
+Processing patient:  MLL_241150
+Processing patient:  MLL_202220
+Processing patient:  MLL_233329
+Processing patient:  MLL_181542
+Processing patient:  MLL_195013
+Processing patient:  MLL_232474
+Processing patient:  MLL_182203
+Processing patient:  MLL_233419
+Processing patient:  MLL_241044
+Processing patient:  MLL_185719
+Processing patient:  MLL_230860
+Processing patient:  MLL_231814
+Processing patient:  MLL_207509
+Processing patient:  MLL_232266
+Processing patient:  MLL_212119
+Processing patient:  MLL_232865
+Processing patient:  MLL_241106
+Processing patient:  MLL_240855
+Processing patient:  MLL_233497
+Processing patient:  MLL_233757
+Processing patient:  MLL_234126
+Processing patient:  MLL_241171
+Processing patient:  MLL_235022
+Processing patient:  MLL_200678
+Processing patient:  MLL_241076
+Processing patient:  MLL_211109
+Processing patient:  MLL_190405
+Processing patient:  MLL_233878
+Processing patient:  MLL_231640
+Processing patient:  MLL_231980
+Processing patient:  MLL_241245
+Processing patient:  MLL_191227
+Processing patient:  MLL_231371
+Processing patient:  MLL_226794
+Processing patient:  MLL_194617
+Processing patient:  MLL_203468
+Processing patient:  MLL_233864
+Processing patient:  MLL_227765
+Processing patient:  MLL_201482
+Processing patient:  MLL_234596
+Processing patient:  MLL_241210
+Processing patient:  MLL_233368
+Processing patient:  MLL_233967
+Processing patient:  MLL_209467
+Processing patient:  MLL_227732
+Processing patient:  MLL_232762
+Processing patient:  MLL_231831
+Processing patient:  MLL_227106
+Processing patient:  MLL_180487
+Processing patient:  MLL_213880
+Processing patient:  MLL_226771
+Processing patient:  MLL_182265
+Processing patient:  MLL_234594
+Processing patient:  MLL_234248
+Processing patient:  MLL_227389
+Processing patient:  MLL_233693
+Processing patient:  MLL_233803
+Processing patient:  MLL_231493
+Processing patient:  MLL_191014
+Processing patient:  MLL_234986
+Processing patient:  MLL_241230
+Processing patient:  MLL_234442
+Processing patient:  MLL_231183
+Processing patient:  MLL_194302
+Processing patient:  MLL_231988
+Processing patient:  MLL_185427
+Processing patient:  MLL_241027
+Processing patient:  MLL_233209
+Processing patient:  MLL_234805
+Processing patient:  MLL_213596
+Processing patient:  MLL_235173
+Processing patient:  MLL_233244
+Processing patient:  MLL_194564
+Processing patient:  MLL_195190
+Processing patient:  MLL_226695
+Processing patient:  MLL_158910
+Processing patient:  MLL_233524
+Processing patient:  MLL_231968
+Processing patient:  MLL_233965
+Processing patient:  MLL_233457
+Processing patient:  MLL_233911
+Processing patient:  MLL_240849
+Processing patient:  MLL_193278
+Processing patient:  MLL_190953
+Processing patient:  MLL_241256
+Processing patient:  MLL_195093
+Processing patient:  MLL_194126
+Processing patient:  MLL_233359
+Processing patient:  MLL_214512
+Processing patient:  MLL_241119
+Processing patient:  MLL_204882
+Processing patient:  MLL_241161
+Processing patient:  MLL_233876
+Processing patient:  MLL_200708
+Processing patient:  MLL_233085
+Processing patient:  MLL_195349
+Processing patient:  MLL_232195
+Processing patient:  MLL_186088
+Processing patient:  MLL_175863
+Processing patient:  MLL_232492
+Processing patient:  MLL_202417
+Processing patient:  MLL_241257
+Processing patient:  MLL_213534
+Processing patient:  MLL_175845
+Processing patient:  MLL_227169
+Processing patient:  MLL_241052
+Processing patient:  MLL_241105
+Processing patient:  MLL_232662
+Processing patient:  MLL_182512
+Processing patient:  MLL_240870
+Processing patient:  MLL_240946
+Processing patient:  MLL_206613
+Processing patient:  MLL_241062
+Processing patient:  MLL_232136
+Processing patient:  MLL_195219
+Processing patient:  MLL_214946
+Processing patient:  MLL_240861
+Processing patient:  MLL_208069
+Processing patient:  MLL_186051
+Processing patient:  MLL_232844
+Processing patient:  MLL_233160
+Processing patient:  MLL_202142
+Processing patient:  MLL_234853
+Processing patient:  MLL_201045
+Processing patient:  MLL_208846
+Processing patient:  MLL_206555
+Processing patient:  MLL_185883
+Processing patient:  MLL_227332
+Processing patient:  MLL_234500
+Processing patient:  MLL_208575
+Processing patient:  MLL_241182
+Processing patient:  MLL_203386
+Processing patient:  MLL_202174
+Processing patient:  MLL_211424
+Processing patient:  MLL_203254
+Processing patient:  MLL_181885
+Processing patient:  MLL_233292
+Processing patient:  MLL_212200
+Processing patient:  MLL_202775
+Processing patient:  MLL_182126
+Processing patient:  MLL_232917
+Processing patient:  MLL_233831
+Processing patient:  MLL_202894
+Processing patient:  MLL_234294
+Processing patient:  MLL_241236
+Processing patient:  MLL_232779
+Processing patient:  MLL_235064
+Processing patient:  MLL_233976
+Processing patient:  MLL_231530
+Processing patient:  MLL_232944
+Processing patient:  MLL_213786
+Processing patient:  MLL_232106
+Processing patient:  MLL_231612
+Processing patient:  MLL_232760
+- loss: 0.876, acc: 0.702, test
+
+------------------------Final report--------------------------
+prefix fnl34_
+Runtime 21h23min23s
+max. Epochs 50
+Learning rate 2e-05
