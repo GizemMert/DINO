@@ -82,7 +82,7 @@ def main():
         '--checkpoint',
         help='checkpoint',
         required=False,
-        default=None)   
+        default='/home/aih/gizem.mert/Dino/DINO/fold_4_scemila_transformer_best.pth')
     parser.add_argument(
         '--metric',
         help='loss or f1',
@@ -224,7 +224,7 @@ def main():
     if checkpoint is None:
         model_path = "DinoBloom-B.pth"
     else:
-        model_path = None
+        model_path = checkpoint
 
     seed = 38
     torch.manual_seed(seed)

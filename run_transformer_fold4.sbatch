@@ -12,5 +12,6 @@
 #SBATCH --mem=60G
 #SBATCH --nice=10000
 
-
+source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
+conda activate my_new_env
 python -u train.py --fold 4 > output_fold4_loss.txt
