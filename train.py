@@ -82,7 +82,7 @@ def main():
         '--checkpoint',
         help='checkpoint',
         required=False,
-        default='/home/aih/gizem.mert/Dino/DINO/fold_4_scemila_transformer_best.pth')
+        default=None)
     parser.add_argument(
         '--metric',
         help='loss or f1',
