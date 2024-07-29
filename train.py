@@ -224,7 +224,7 @@ def main():
     if checkpoint is None:
         model_path = "DinoBloom-B.pth"
     else:
-        model_path = checkpoint
+        model_path = None
 
     seed = 38
     torch.manual_seed(seed)
