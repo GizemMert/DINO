@@ -222,7 +222,7 @@ def main():
     
     # set up GPU link and model (check for multi GPU setup)
     if checkpoint is None:
-        model_path = "DinoBloom-B.pth"
+        model_path = "/home/aih/gizem.mert/Dino/DINO/fold_4_scemila_transformer_best.pth"
     else:
         model_path = None
 
