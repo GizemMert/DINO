@@ -655,6 +655,7 @@ def calculate_f1_from_confusion_matrix(confusion_matrix):
     
     # Calculate precision and recall for each class
     precision = TP / (TP + FP)
+    precision[np.isnan(precision)] = 0
     recall = TP / (TP + FN)
     
     # Avoid division by zero
@@ -663,6 +664,7 @@ def calculate_f1_from_confusion_matrix(confusion_matrix):
     
     # Calculate F1 score for each class
     f1_scores_per_class = 2 * (precision * recall) / (precision + recall)
+    f1_scores_per_class[np.isnan(f1_scores_per_class)] = 0
     
     # Calculate macro F1 score (simple average over classes)
     f1_macro = np.nanmean(f1_scores_per_class)
