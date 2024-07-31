@@ -213,7 +213,7 @@ def main():
         #if split != 'test':  # balanced sampling for train and val sets
             #sampler = create_balanced_sampler(dataset,class_count)
     
-        dataloaders[split] = DataLoader(dataset, batch_size=1, shuffle = True, num_workers=num_workers, pin_memory=True)
+        dataloaders[split] = DataLoader(dataset, batch_size=1, shuffle = True, num_workers=num_workers, pin_memory=False)
     
     print("Datoladers are ready..")
     
