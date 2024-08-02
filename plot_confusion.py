@@ -35,7 +35,7 @@ def plot_confusion_matrix(cm, results_path, df):
     labels = get_label_names_from_csv(df)
     
     # Set the size of the figure and font scale for better visibility
-    plt.figure(figsize=(18, 18))   # Increase the figure size
+    plt.figure(figsize=(25, 25))   # Increase the figure size
     sns.set(font_scale=1.5)        # Increase the font size
     sns.heatmap(cm, annot=True, cmap='Blues', fmt='g', cbar=False, annot_kws={"size": 14}, 
                 xticklabels=labels, yticklabels=labels)  # Add label names here
