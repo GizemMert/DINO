@@ -6,7 +6,7 @@ Created on Sat Aug  5 14:10:27 2023
 """
 from model_train import ModelTrainer
 #from model_eval import *  # model training function
-from classifier import ViTMiL         
+from classifier_dropout import ViTMiL
 from dataset2 import MllDataset       # dataset
 from plot_confusion import plot_confusion_matrix
 
@@ -18,7 +18,7 @@ import torch
 import sys
 import os
 import time
-import argparse as ap
+import argparse as ae
 import pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
