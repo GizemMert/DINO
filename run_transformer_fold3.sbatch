@@ -13,6 +13,9 @@
 #SBATCH --mem=60G
 #SBATCH --nice=10000
 
+export TMPDIR=/tmp
+
+ulimit -n 4096
 source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
 conda activate my_new_env
 python -u train.py --fold 3 > output_fold3_loss.txt
