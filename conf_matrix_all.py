@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from plot_confusion import plot_confusion_matrix
 
-RESULT_FOLDER = "/home/aih/gizem.mert/Dino/DINO/confusion_all_test"
+RESULT_FOLDER = "/Users/gizem/Downloads/Dino_scemila"
 
-fold_0_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold02/test_conf_matrix.npy"
-fold_1_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold12/test_conf_matrix.npy"
-fold_2_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold22/test_conf_matrix.npy"
-fold_3_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold32/test_conf_matrix.npy"
-fold_4_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold45/test_conf_matrix.npy"
+fold_0_confusion_path = "/Users/gizem/Downloads/Dino_scemila/Results_fold04/test_conf_matrix.npy"
+fold_1_confusion_path = "/Users/gizem/Downloads/Dino_scemila/Results_fold15/test_conf_matrix.npy"
+fold_2_confusion_path = "/Users/gizem/Downloads/Dino_scemila/Results_fold23/test_conf_matrix.npy"
+fold_3_confusion_path = "/Users/gizem/Downloads/Dino_scemila/Results_fold35/test_conf_matrix.npy"
+fold_4_confusion_path = "/Users/gizem/Downloads/Dino_scemila/Results_fold46/test_conf_matrix.npy"
 
 csv_root = "data_cross_val"
 
