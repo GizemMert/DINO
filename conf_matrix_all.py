@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from plot_confusion import plot_confusion_matrix
 
-RESULT_FOLDER = "/Users/gizem/Downloads/Dino_scemila"
+RESULT_FOLDER = "/home/aih/gizem.mert/Dino/DINO/confusion_all_test"
 
 fold_0_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold04/test_conf_matrix.npy"
 fold_1_confusion_path = "/home/aih/gizem.mert/Dino/DINO/Results_fold15/test_conf_matrix.npy"

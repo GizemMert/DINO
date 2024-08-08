@@ -42,7 +42,7 @@ def plot_confusion_matrix(cm, results_path, df):
     plt.xlabel('Predicted labels', fontsize=16)
     plt.ylabel('True labels', fontsize=16)
     plt.title('Confusion Matrix', fontsize=18)
-    plt.savefig(os.path.join(results_path, 'confusion_matrix.png'), dpi=600)  # Save with higher resolution
+    plt.savefig(os.path.join(results_path, 'confusion_matrix_dropout.png'), dpi=600)  # Save with higher resolution
     plt.close()
 
 
