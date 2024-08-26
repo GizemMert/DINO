@@ -1,7 +1,7 @@
 import torch
 import os
 from PIL import Image
-import label_converter  # make sure the label_converter.py is in the folder with this script
+# import label_converter  # make sure the label_converter.py is in the folder with this script
 import numpy as np
 from torchvision import transforms
 import torch.nn as nn
