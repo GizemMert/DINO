@@ -20,7 +20,7 @@ def create_dataset(root_dirs):
 
     for sgl_dir in root_dirs:
         for file_sgl in os.listdir(sgl_dir):
-            if not '.tif' in file_sgl:
+            if not '.TIF' in file_sgl:
                 continue
             data.append(os.path.join(sgl_dir, file_sgl))
 
@@ -28,7 +28,7 @@ def create_dataset(root_dirs):
     data = np.array(data)
 
     # Extract numerical part for sorting
-    numeric_part = np.array([int(name.split('image_')[1].split('.tif')[0]) for name in data])
+    numeric_part = np.array([int(name.split('image_')[1].split('.TIF')[0]) for name in data])
 
     # Get the indices that would sort the numeric part
     sorted_indices = np.argsort(numeric_part)
@@ -88,13 +88,13 @@ for folder_class in os.listdir(PATH_TO_IMAGES):
         for folder_patient in os.listdir(folder_class):
             folder_patient = os.path.join(folder_class, folder_patient)
             if os.path.isdir(folder_patient):
-                # Check if there are .tif files in the patient folder
-                tif_files = [file for file in os.listdir(folder_patient) if file.endswith(".tif")]
+                # Check if there are .TIF files in the patient folder
+                tif_files = [file for file in os.listdir(folder_patient) if file.endswith(".TIF")]
                 if tif_files:
-                    print("Processing patient folder with .tif files:", folder_patient)
+                    print("Processing patient folder with .TIF files:", folder_patient)
                     data = create_dataset([folder_patient])
-                    print(f"Found {len(data)} .tif files in patient folder: {folder_patient}")
+                    print(f"Found {len(data)} .TIF files in patient folder: {folder_patient}")
                     save_single_cell_probabilities(data, folder_patient)
                     print(f"Finished processing patient folder: {folder_patient}")
                 else:
-                    print("Skipping patient folder without .tif files:", folder_patient)
+                    print("Skipping patient folder without .TIF files:", folder_patient)
