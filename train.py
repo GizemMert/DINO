@@ -18,7 +18,7 @@ import torch
 import sys
 import os
 import time
-import argparse as ae
+import argparse as ap
 import pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
