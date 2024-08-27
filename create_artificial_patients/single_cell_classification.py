@@ -20,15 +20,17 @@ def create_dataset(root_dirs):
 
     for sgl_dir in root_dirs:
         for file_sgl in os.listdir(sgl_dir):
-            if not '.TIF' in file_sgl:
+            # Check for .RGB.TIF files (case insensitive)
+            if not file_sgl.lower().endswith('.rgb.tif'):
                 continue
             data.append(os.path.join(sgl_dir, file_sgl))
 
     # Convert the list to a NumPy array
     data = np.array(data)
 
-    # Extract numerical part for sorting
-    numeric_part = np.array([int(name.split('image_')[1].split('.TIF')[0]) for name in data])
+    # Extract numerical part from filenames for sorting
+    # Assuming filenames are like "Gal-000001.RGB.TIF"
+    numeric_part = np.array([int(name.split('-')[1].split('.')[0]) for name in data])
 
     # Get the indices that would sort the numeric part
     sorted_indices = np.argsort(numeric_part)
@@ -77,24 +79,22 @@ def save_single_cell_probabilities(data, folder_patient):
     # Save the array to the .npy file
     np.save(output_npy_file, single_cell_probs)
 
-
+patient_folders = [os.path.join(PATH_TO_IMAGES, patient_folder) for patient_folder in os.listdir(PATH_TO_IMAGES)]
 # Save class probabilities for each patient
 print("Starting processing of image folders...")
-for folder_class in os.listdir(PATH_TO_IMAGES):
-    folder_class = os.path.join(PATH_TO_IMAGES, folder_class)
+# Process each patient folder
+for folder_patient in patient_folders:
+    print(f"Processing patient folder: {folder_patient}")
 
-    if os.path.isdir(folder_class):
-        print(f"Processing class folder: {folder_class}")
-        for folder_patient in os.listdir(folder_class):
-            folder_patient = os.path.join(folder_class, folder_patient)
-            if os.path.isdir(folder_patient):
-                # Check if there are .TIF files in the patient folder
-                tif_files = [file for file in os.listdir(folder_patient) if file.endswith(".TIF")]
-                if tif_files:
-                    print("Processing patient folder with .TIF files:", folder_patient)
-                    data = create_dataset([folder_patient])
-                    print(f"Found {len(data)} .TIF files in patient folder: {folder_patient}")
-                    save_single_cell_probabilities(data, folder_patient)
-                    print(f"Finished processing patient folder: {folder_patient}")
-                else:
-                    print("Skipping patient folder without .TIF files:", folder_patient)
+    # Create dataset from current patient folder
+    data = create_dataset([folder_patient])
+
+    # Check if any .tif files were found
+    if len(data) == 0:
+        print("Skipping patient folder without .RGB.TIF files:", folder_patient)
+        continue
+
+    print(f"Found {len(data)} .RGB.TIF files in patient folder: {folder_patient}")
+    # Call your function to process and save data
+    save_single_cell_probabilities(data, folder_patient)
+    print(f"Finished processing patient folder: {folder_patient}")
