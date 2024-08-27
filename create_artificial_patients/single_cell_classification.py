@@ -79,11 +79,19 @@ def save_single_cell_probabilities(data, folder_patient):
     # Save the array to the .npy file
     np.save(output_npy_file, single_cell_probs)
 
-patient_folders = [os.path.join(PATH_TO_IMAGES, patient_folder) for patient_folder in os.listdir(PATH_TO_IMAGES)]
+patient_folders = [os.path.join(PATH_TO_IMAGES, patient_folder)
+                   for patient_folder in os.listdir(PATH_TO_IMAGES)
+                   if os.path.isdir(os.path.join(PATH_TO_IMAGES, patient_folder))]
 # Save class probabilities for each patient
 print("Starting processing of image folders...")
 # Process each patient folder
 for folder_patient in patient_folders:
+    # Check if the output file already exists
+    output_npy_file = os.path.join(folder_patient, 'single_cell_probabilities.npy')
+    if os.path.exists(output_npy_file):
+        print(f"Output file already exists for patient folder: {folder_patient}. Skipping processing.")
+        continue
+
     print(f"Processing patient folder: {folder_patient}")
 
     # Create dataset from current patient folder
@@ -98,3 +106,5 @@ for folder_patient in patient_folders:
     # Call your function to process and save data
     save_single_cell_probabilities(data, folder_patient)
     print(f"Finished processing patient folder: {folder_patient}")
+
+print("Processing complete.")
