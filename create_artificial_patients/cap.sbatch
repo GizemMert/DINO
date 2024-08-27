@@ -2,7 +2,7 @@
 
 #SBATCH --output=slurm_pyscript_%j_cap.job
 #SBATCH --error=slurm_error_%j_cap.job
-#SBATCH --partition=cpu_p   Changed to CPU partition
+#SBATCH --partition=cpu_p
 #SBATCH --qos=cpu_normal
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=100G
