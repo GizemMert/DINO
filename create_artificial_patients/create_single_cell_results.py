@@ -34,9 +34,9 @@ val_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_0/val.cs
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
 
 # Read the patient IDs from the CSV files
-train_patients = pd.read_csv(train_csv_path)['patient_files'].tolist()
-val_patients = pd.read_csv(val_csv_path)['patient_files'].tolist()
-selected_patients = pd.concat([train_patients, val_patients], ignore_index=True)
+train_patients_df = pd.read_csv(train_csv_path)
+val_patients_df = pd.read_csv(val_csv_path)
+selected_patients = pd.concat([train_patients_df, val_patients_df], ignore_index=True)
 
 # Read the label to diagnose mapping
 label_to_diagnose = pd.read_csv(label_to_diagnose_path)
