@@ -28,9 +28,9 @@ aml_class_labels = ["Acute leukaemia","Lymphoma","MDS","MDS / MPN","MPN", "No ma
 
 # Paths to the folders and files
 data_path = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
-result_path = '/home/aih/gizem.mert/Dino/DINO/fold3/train'
-train_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_3/train.csv'
-val_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_3/val.csv'
+result_path = '/home/aih/gizem.mert/Dino/DINO/fold4/train'
+train_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_4/train.csv'
+val_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_4/val.csv'
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
 
 # Read the patient IDs from the CSV files
