@@ -12,7 +12,6 @@ label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to
 label_to_diagnose = pd.read_csv(label_to_diagnose_path)
 label_to_diagnose_dict = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
 class_labels = label_to_diagnose['diagnose'].tolist()
-n_classes = len(class_labels)
 
 
 # Function to get list of image_paths in one folder
@@ -21,7 +20,7 @@ def get_image_path_list(folder_path):
     return tif_files
 
 
-# Extracts the number of image in the file_path e.g. "Gal-000123.RGB.TIF"
+# Extracts the number from the image file path, e.g., "Gal-000123.RGB.TIF"
 def extract_number_image(file_path):
     match = re.search(r'Gal-(\d+).RGB.TIF', file_path)
     return int(match.group(1))
@@ -45,13 +44,13 @@ def get_classification_patient(patient_folder):
     return sc_class
 
 
+# Set up paths
 data_directory = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
-n_patients = 600
 experiment_name = "experiment_3"
 output_folder = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/{experiment_name}/data'
 output_folder_csv = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/{experiment_name}'
 
-# Load patient data from train and validation csv
+# Load patient data from train and validation CSVs
 train_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_0/train.csv'
 val_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_0/val.csv'
 train_patients_df = pd.read_csv(train_csv_path)
@@ -59,22 +58,27 @@ val_patients_df = pd.read_csv(val_csv_path)
 selected_patients = pd.concat([train_patients_df, val_patients_df], ignore_index=True)
 patient_to_label = dict(zip(selected_patients['patient_files'], selected_patients['labels']))
 
-# Initialize a list to store artificial patient metadata
-artificial_patients_metadata = []
-
-# Iterate over real dataset and store image paths in a dataframe df
+# Initialize DataFrame to store image paths and related information
 df = pd.DataFrame(columns=["patient", "AML_subtype", "SC_Label", "image_path"])
+
+# Iterate over patient folders in the raw images directory
 for folder_patient in os.listdir(data_directory):
     if folder_patient not in patient_to_label:
-        continue
+        continue  # Skip if the patient is not in the selected list
     folder_patient_path = os.path.join(data_directory, folder_patient)
     if os.path.isdir(folder_patient_path):
         AML_subtype = get_class_name(folder_patient)
         images = get_image_path_list(folder_patient_path)
         sc_classes = get_classification_patient(folder_patient_path)
+
         for image in images:
             number = extract_number_image(image)
-            df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, sc_classes[number], image]
+            # Ensure the index is within bounds of sc_classes
+            if 0 <= number < len(sc_classes):
+                df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, sc_classes[number], image]
+            else:
+                print(
+                    f"Warning: Image {image} has index {number} out of bounds for classification results (size {len(sc_classes)}). Skipping this image.")
 
 # Calculate mean and std for each cell type that will be later used to sample data with normal distribution
 sc_class_labels = ['eosinophil granulocyte', 'reactive lymphocyte',
