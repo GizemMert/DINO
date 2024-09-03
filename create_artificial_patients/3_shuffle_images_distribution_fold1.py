@@ -95,7 +95,7 @@ sc_class_labels = ['eosinophil granulocyte', 'reactive lymphocyte',
                    'normo', 'plasma cell', 'hair cell', 'bilobed M3v',
                    'mononucleosis']
 
-df_sc_res = pd.read_csv("/home/aih/gizem.mert/Dino/DINO/fold1/train/single_cell_results.csv")
+df_sc_res = pd.read_csv("/home/aih/gizem.mert/Dino/DINO/fold1/train/single_cell_results.csv").drop("patient", axis=1)
 df_meanstd = df_sc_res.groupby(["AML_subtype"]).agg(["mean", "std"])
 
 # This cell creates artificial patients and stores the single cell counts per patient in cell_type_counts_dict
