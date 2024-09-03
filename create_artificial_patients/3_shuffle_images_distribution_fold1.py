@@ -58,6 +58,7 @@ patient_to_label = dict(zip(selected_patients['patient_files'], selected_patient
 artificial_patients_metadata = []
 # Iterate over real dataset and store image paths in a dataframe df
 df = pd.DataFrame(columns=["patient", "AML_subtype", "SC_Label", "image_path"])
+print("Starting to first loop for real patients")
 for folder_patient in os.listdir(data_directory):
     if folder_patient not in patient_to_label:
         continue  # Skip if the patient is not in the selected list
@@ -83,7 +84,7 @@ for folder_patient in os.listdir(data_directory):
             df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, classification, image_path]
 
 
-
+print("First loop ended")
 # Calculate mean and std for each cell type that will be later used to sample data with normal distribution
 sc_class_labels = ['eosinophil granulocyte', 'reactive lymphocyte',
                    'neutrophil granulocyte (segmented)', 'typical lymphocyte',
