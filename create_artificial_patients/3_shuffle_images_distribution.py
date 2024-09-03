@@ -20,8 +20,13 @@ def get_image_path_list(folder_path):
 
 # Extracts the number of image in the file_path e.g. "Gal-000123.RGB.TIF"
 def extract_number_image(file_path):
-    match = re.search(r'Gal-(\d+).RGB.TIF', file_path)
-    return int(match.group(1))
+    match = re.search(r'Gal-(\d{6})\.RGB\.TIF', file_path, re.IGNORECASE)
+    if match:
+        return int(match.group(1))
+    else:
+        # Log a warning with the filename that doesn't match the expected pattern
+        print(f"Warning: Image file name does not match expected pattern: {file_path}")
+        return None
 
 def get_patient_name(path):
     return os.path.basename(path)
