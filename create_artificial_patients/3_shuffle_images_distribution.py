@@ -1,11 +1,8 @@
 import numpy as np
 import glob
 import os
-import random
 import re
-from collections import Counter
 import pandas as pd
-import pickle
 
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
@@ -73,11 +70,18 @@ for folder_patient in os.listdir(data_directory):
         images = get_image_path_list(folder_patient_path)
         sc_classes = get_classification_patient(folder_patient_path)
 
+        # Check if number of images matches number of classification entries
+        if len(images) != len(sc_classes):
+            print(f"Mismatch in number of images and classification results for patient folder: {folder_patient_path}")
+            print(f"Number of images: {len(images)}, Number of classification results: {len(sc_classes)}")
+            continue  # Skip this patient if there's a mismatch
+
         for image in images:
             number = extract_number_image(image)
+
             # Ensure the index is within bounds of sc_classes
-            if 0 <= number < len(sc_classes):
-                df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, sc_classes[number], image]
+            if 0 <= number - 1 < len(sc_classes):
+                df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, sc_classes[number - 1], image]
             else:
                 print(
                     f"Warning: Image {image} has index {number} out of bounds for classification results (size {len(sc_classes)}). Skipping this image.")
