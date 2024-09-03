@@ -6,7 +6,7 @@
 #SBATCH --qos=cpu_normal
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=50G
-#SBATCH --time=24:00:00
+#SBATCH --time=72:00:00
 #SBATCH --nice=10000
 
 # Load the conda environment
