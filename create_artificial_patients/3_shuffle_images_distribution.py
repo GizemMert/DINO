@@ -39,7 +39,7 @@ def get_classification_patient(patient_folder):
     return sc_class
 
 data_directory = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
-n_patients = 600
+n_patients = 200
 experiment_name = "experiment_3"
 output_folder = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/{experiment_name}/data'
 output_folder_csv = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/{experiment_name}'
