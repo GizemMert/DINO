@@ -22,8 +22,8 @@ for folder_patient in os.listdir(data_directory):
         for file_name in os.listdir(folder_patient_path):
             file_path = os.path.join(folder_patient_path, file_name)
 
-            # Check if it's a file
-            if os.path.isfile(file_path):
+            # Check if it's a file and ignore .npy and .db files
+            if os.path.isfile(file_path) and not (file_name.endswith('.npy') or file_name.endswith('.db')):
                 # Check if the file name does not match the expected pattern
                 if not expected_pattern.match(file_name):
                     print(f'Mismatched file: {file_path}')  # Print out the mismatched file path
