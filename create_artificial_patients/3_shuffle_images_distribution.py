@@ -1,9 +1,9 @@
 import numpy as np
-import glob
 import os
 import re
-import pandas as pd
+import glob
 from PIL import Image
+import pandas as pd
 
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
@@ -12,23 +12,19 @@ label_to_diagnose_dict = dict(zip(label_to_diagnose['label'], label_to_diagnose[
 class_labels = label_to_diagnose['diagnose'].tolist()
 n_classes = len(class_labels)
 
-
 # Function to get list of image_paths in one folder
 def get_image_path_list(folder_path):
-    # Only include valid .TIF images and ignore hidden files
-    tif_files = [f for f in glob.glob(f"{folder_path}/*.TIF") if not f.startswith('.')]
-    return tif_files
-
+    # List only .TIF files and ignore other types of files like .npy
+    tif_files = [f for f in glob.glob(f"{folder_path}/*.TIF") if f.lower().endswith('.tif')]
+    return sorted(tif_files)  # Ensure files are sorted consistently
 
 # Extracts the number of image in the file_path e.g. "Gal-000123.RGB.TIF"
 def extract_number_image(file_path):
     match = re.search(r'Gal-(\d+).RGB.TIF', file_path)
     return int(match.group(1))
 
-
 def get_patient_name(path):
     return os.path.basename(path)
-
 
 def get_class_name(patient_name):
     label = patient_to_label.get(patient_name)
@@ -36,13 +32,11 @@ def get_class_name(patient_name):
         return label_to_diagnose_dict.get(label, "Unknown")
     return "Unknown"
 
-
 def get_classification_patient(patient_folder):
     probs_path = os.path.join(patient_folder, 'single_cell_probabilities.npy')
     sc_probs = np.load(probs_path)
     sc_class = np.argmax(sc_probs, axis=1)
     return sc_class
-
 
 data_directory = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
 n_patients = 600
@@ -58,9 +52,7 @@ val_patients_df = pd.read_csv(val_csv_path)
 selected_patients = pd.concat([train_patients_df, val_patients_df], ignore_index=True)
 patient_to_label = dict(zip(selected_patients['patient_files'], selected_patients['labels']))
 
-# Initialize a list to store artificial patient metadata
 artificial_patients_metadata = []
-
 # Iterate over real dataset and store image paths in a dataframe df
 df = pd.DataFrame(columns=["patient", "AML_subtype", "SC_Label", "image_path"])
 for folder_patient in os.listdir(data_directory):
@@ -69,29 +61,24 @@ for folder_patient in os.listdir(data_directory):
     folder_patient_path = os.path.join(data_directory, folder_patient)
     if os.path.isdir(folder_patient_path):
         AML_subtype = get_class_name(folder_patient)
-        images = get_image_path_list(folder_patient_path)
+        images = get_image_path_list(folder_patient_path)  # Only get image files
         sc_classes = get_classification_patient(folder_patient_path)
 
-        # Double-checking for mismatch after filtering
-        if len(images) != len(sc_classes):
-            print(f"Mismatch in number of images and classification results for patient folder: {folder_patient_path}")
-            print(f"Number of images: {len(images)}, Number of classification results: {len(sc_classes)}")
-            continue  # Skip this patient if there's a mismatch
+        # Match images with classification results by filename number
+        image_numbers = [extract_number_image(image) for image in images]
+        image_classes = list(zip(image_numbers, images))
 
-        for image in images:
-            number = extract_number_image(image)
+        # Sort both lists by the numeric part
+        sorted_image_classes = sorted(image_classes, key=lambda x: x[0])
+        sorted_classes = sorted(zip(image_numbers, sc_classes), key=lambda x: x[0])
 
-            # Adjust index and ensure the index is within bounds of sc_classes
-            adjusted_index = number - 1
-            if 0 <= adjusted_index < len(sc_classes):
-                df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, sc_classes[adjusted_index],
-                                   image]
-            else:
-                print(
-                    f"Warning: Image {image} has adjusted index {adjusted_index} out of bounds for classification results (size {len(sc_classes)}). Skipping this image.")
+        # Only keep entries that match by image number
+        matched_images_classes = [(img_path, cls) for (num_img, img_path), (num_cls, cls) in zip(sorted_image_classes, sorted_classes) if num_img == num_cls]
 
-        # Append metadata for artificial patient to list
-        artificial_patients_metadata.append({"patient_files": folder_patient, "labels": AML_subtype})
+        # Process matched images and classifications
+        for image_path, classification in matched_images_classes:
+            df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, classification, image_path]
+
 
 # Calculate mean and std for each cell type that will be later used to sample data with normal distribution
 sc_class_labels = ['eosinophil granulocyte', 'reactive lymphocyte',
@@ -158,6 +145,10 @@ artificial_patients_df = pd.DataFrame(artificial_patients_metadata)
 artificial_patients_csv_path = os.path.join(output_folder_csv, 'artificial_patients.csv')
 artificial_patients_df.to_csv(artificial_patients_csv_path, index=False)
 print(f"Artificial patient metadata saved to {artificial_patients_csv_path}")
+
+# Save the DataFrame with image paths and related information
+df.to_csv(os.path.join(output_folder_csv, 'image_data.csv'), index=False)
+print(f"Image data saved to {os.path.join(output_folder_csv, 'image_data.csv')}")
 
 # Create metadata including single cell types
 rows = []
