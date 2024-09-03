@@ -2,7 +2,6 @@ import numpy as np
 import os
 import re
 import glob
-from PIL import Image
 import pandas as pd
 
 # Load class label information from CSV
@@ -24,7 +23,6 @@ def extract_number_image(file_path):
     if match:
         return int(match.group(1))
     else:
-        # Log a warning with the filename that doesn't match the expected pattern
         print(f"Warning: Image file name does not match expected pattern: {file_path}")
         return None
 
@@ -71,11 +69,11 @@ for folder_patient in os.listdir(data_directory):
 
         # Match images with classification results by filename number
         image_numbers = [extract_number_image(image) for image in images]
-        image_classes = list(zip(image_numbers, images))
+        image_classes = [(num, img) for num, img in zip(image_numbers, images) if num is not None]
 
         # Sort both lists by the numeric part
         sorted_image_classes = sorted(image_classes, key=lambda x: x[0])
-        sorted_classes = sorted(zip(image_numbers, sc_classes), key=lambda x: x[0])
+        sorted_classes = sorted(zip([num for num in image_numbers if num is not None], sc_classes), key=lambda x: x[0])
 
         # Only keep entries that match by image number
         matched_images_classes = [(img_path, cls) for (num_img, img_path), (num_cls, cls) in zip(sorted_image_classes, sorted_classes) if num_img == num_cls]
@@ -83,6 +81,7 @@ for folder_patient in os.listdir(data_directory):
         # Process matched images and classifications
         for image_path, classification in matched_images_classes:
             df.loc[len(df)] = [get_patient_name(folder_patient_path), AML_subtype, classification, image_path]
+
 
 
 # Calculate mean and std for each cell type that will be later used to sample data with normal distribution
