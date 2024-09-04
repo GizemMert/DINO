@@ -115,7 +115,12 @@ for aml_subtype in class_labels:
         for cell_type_number, cell_type in enumerate(sc_class_labels):
             df_cell_type = df[df["SC_Label"] == cell_type_number]
             file_path = df_cell_type["image_path"].values
-            image_paths = np.random.choice(file_path, size=generated_data[cell_type_number]).tolist()
+            if len(file_path) > 0 and generated_data[cell_type_number] > 0:
+                image_paths = np.random.choice(file_path, size=generated_data[cell_type_number]).tolist()
+            else:
+                image_paths = []
+
+            # Print statement to indicate the selection count for each cell type
             print(f"\t\tSelected {len(image_paths)} images for {cell_type}")
             image_file_paths += image_paths
             selected_images_count[cell_type] = len(image_paths)
