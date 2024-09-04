@@ -3,6 +3,7 @@ import os
 import re
 import glob
 import pandas as pd
+import pickle
 
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
