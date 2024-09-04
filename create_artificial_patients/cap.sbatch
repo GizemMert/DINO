@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --output=slurm_pyscript_%j_cap.job
-#SBATCH --error=slurm_error_%j_cap.job
+#SBATCH --output=o_fold0_%j_cap.job
+#SBATCH --error=e_fold0_%j_cap.job
 #SBATCH --partition=cpu_p
 #SBATCH --qos=cpu_normal
 #SBATCH --cpus-per-task=10
