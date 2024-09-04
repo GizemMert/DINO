@@ -1,40 +1,33 @@
-import os
-import re
+import pandas as pd
 
-# Define the path to the directory containing the patient folders
-data_directory = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
+# Load the single cell results CSV file
+single_cell_results_path = "/home/aih/gizem.mert/Dino/DINO/fold0/train/single_cell_results.csv"
 
-# Expected filename pattern
-expected_pattern = re.compile(r'Gal-\d{6}\.RGB\.TIF$', re.IGNORECASE)
+# Read the CSV file into a DataFrame
+df_sc_res = pd.read_csv(single_cell_results_path)
 
-# List to store patient folders with mismatched filenames
-folders_with_mismatched_files = []
+# Display unique AML subtypes in the single cell results data
+unique_subtypes = df_sc_res["AML_subtype"].unique()
+print("Unique AML subtypes in single cell results data:")
+print(unique_subtypes)
 
-# Iterate over each patient folder
-for folder_patient in os.listdir(data_directory):
-    folder_patient_path = os.path.join(data_directory, folder_patient)
+# Check specifically for the presence of "MDS / MPN"
+if "MDS / MPN" in unique_subtypes:
+    print("\n'MDS / MPN' is present in the single cell results data.")
+else:
+    print("\n'MDS / MPN' is NOT present in the single cell results data.")
 
-    # Check if the path is a directory
-    if os.path.isdir(folder_patient_path):
-        has_mismatch = False
+# Optional: Count the number of entries for each AML subtype
+subtype_counts = df_sc_res["AML_subtype"].value_counts()
+print("\nNumber of entries for each AML subtype:")
+print(subtype_counts)
 
-        # Iterate over each file in the patient folder
-        for file_name in os.listdir(folder_patient_path):
-            file_path = os.path.join(folder_patient_path, file_name)
+# Optional: Provide a summary of entries related to "MDS / MPN"
+mds_mpn_entries = df_sc_res[df_sc_res["AML_subtype"] == "MDS / MPN"]
+print("\nSummary of entries for 'MDS / MPN':")
+print(mds_mpn_entries.describe(include='all'))
 
-            # Check if it's a file and ignore .npy and .db files
-            if os.path.isfile(file_path) and not (file_name.endswith('.npy') or file_name.endswith('.db')):
-                # Check if the file name does not match the expected pattern
-                if not expected_pattern.match(file_name):
-                    print(f'Mismatched file: {file_path}')  # Print out the mismatched file path
-                    has_mismatch = True
+# Optional: Check if there are any missing values in the relevant columns
+print("\nMissing values in 'AML_subtype' column:")
+print(df_sc_res["AML_subtype"].isnull().sum())
 
-        # If any mismatched files were found in this folder, add it to the list
-        if has_mismatch:
-            folders_with_mismatched_files.append(folder_patient)
-
-# Print the results
-print(f'\nNumber of patient folders with mismatched filenames: {len(folders_with_mismatched_files)}')
-print('List of patient folders with mismatched filenames:')
-for folder in folders_with_mismatched_files:
-    print(folder)
