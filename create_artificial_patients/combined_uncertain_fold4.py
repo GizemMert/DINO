@@ -3,7 +3,7 @@ import re
 import torch
 import torch.nn.functional as F
 import sys
-sys.path.append(os.path.abspath("/home/aih/gizem.mert/Dino/DINO/classifier_dropout"))
+sys.path.append(os.path.abspath("/home/aih/gizem.mert/Dino/DINO"))
 from classifier_dropout import ViTMiL
 # from dataset_mixed import *  # dataset
 # from model import *  # actual MIL model
