@@ -15,6 +15,9 @@ import numpy as np
 import pickle
 from transformers import ViTFeatureExtractor
 from PIL import Image
+import types
+dinov2 = types.ModuleType("dinov2")
+sys.modules["dinov2"] = dinov2
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
