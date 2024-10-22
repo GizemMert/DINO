@@ -139,8 +139,22 @@ num_samples = 10
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # Load model
-model = torch.load(os.path.join(TARGET_FOLDER, "model.pt"), map_location="cpu")
-model = model.to(device)
+model_path = os.path.join(TARGET_FOLDER, "model.pt")
+
+# Initialize the model architecture (ViTMiL) before loading weights
+model = ViTMiL(
+    class_count=num_classes,  # Assuming `num_classes` is 7
+    multicolumn=1,  # Adjust based on your use case
+    device=device,  # Use device, could be 'cpu' or 'cuda'
+    model_path=None  # No specific model path since we're loading weights separately
+)
+
+# Load the weights into the initialized model
+pretrained_weights = torch.load(model_path, map_location="cpu")  # Load to CPU first
+model.load_state_dict(pretrained_weights, strict=False)  # Load weights into the model
+model = model.to(device)  # Move the model to the appropriate device
+
+# Set the model to training mode (since you're likely doing Monte Carlo sampling)
 model.train()
 
 # Initialize arrays to store uncertainties
