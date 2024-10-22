@@ -3,8 +3,8 @@ import re
 import torch
 import torch.nn.functional as F
 import sys
-from dataset_mixed import *  # dataset
-from model import *  # actual MIL model
+# from dataset_mixed import *  # dataset
+# from model import *  # actual MIL model
 from sklearn import metrics as metrics
 import csv
 import shutil
