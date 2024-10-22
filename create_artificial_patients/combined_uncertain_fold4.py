@@ -4,6 +4,7 @@ import torch
 import torch.nn.functional as F
 import sys
 sys.path.append(os.path.abspath("/home/aih/gizem.mert/Dino/DINO"))
+from transformer import Transformer
 from classifier_dropout import ViTMiL
 # from dataset_mixed import *  # dataset
 # from model import *  # actual MIL model
@@ -16,8 +17,14 @@ import pickle
 from transformers import ViTFeatureExtractor
 from PIL import Image
 import types
+
 dinov2 = types.ModuleType("dinov2")
 sys.modules["dinov2"] = dinov2
+
+# If there are submodules like dinov2.models, add them as well
+dinov2.models = types.ModuleType("models")
+sys.modules["dinov2.models"] = dinov2.models
+
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
