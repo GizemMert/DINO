@@ -30,7 +30,7 @@ sys.modules["dinov2.models"] = dinov2.models
 dinov2.models.vision_transformer = types.ModuleType("vision_transformer")
 sys.modules["dinov2.models.vision_transformer"] = dinov2.models.vision_transformer
 
-# Create a mock class named "DinoVisionTransformer"
+# Create a mock class named "DinoVisionTransformer" inside vision_transformer
 class DinoVisionTransformer(nn.Module):
     def __init__(self, *args, **kwargs):
         super(DinoVisionTransformer, self).__init__()
@@ -43,6 +43,23 @@ class DinoVisionTransformer(nn.Module):
 # Add the mock DinoVisionTransformer class to the vision_transformer submodule
 dinov2.models.vision_transformer.DinoVisionTransformer = DinoVisionTransformer
 
+# Add a submodule named "layers" to dinov2
+dinov2.layers = types.ModuleType("layers")
+sys.modules["dinov2.layers"] = dinov2.layers
+
+# Create a mock class for any specific layers used by `dinov2.layers`
+# Assuming there might be a "LayerClass" or similar class expected by the model
+class MockLayer(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super(MockLayer, self).__init__()
+        # Define any simple mock structure here if needed
+
+    def forward(self, x):
+        # Return the input as the mock behavior for forward pass
+        return x
+
+# Add this mock layer class to dinov2.layers
+dinov2.layers.LayerClass = MockLayer
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
