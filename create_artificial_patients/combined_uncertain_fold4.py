@@ -26,6 +26,23 @@ dinov2.models = types.ModuleType("models")
 sys.modules["dinov2.models"] = dinov2.models
 
 
+# Add a submodule named "vision_transformer" to dinov2.models
+dinov2.models.vision_transformer = types.ModuleType("vision_transformer")
+sys.modules["dinov2.models.vision_transformer"] = dinov2.models.vision_transformer
+
+# Create a mock class that was expected from dinov2.models.vision_transformer
+class MockVisionTransformer(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super(MockVisionTransformer, self).__init__()
+        # You can define a simple structure here if needed for forward pass
+
+    def forward(self, x):
+        return x  # Simply return the input as mock behavior
+
+# Add the mock class to the vision_transformer submodule
+dinov2.models.vision_transformer.VisionTransformer = MockVisionTransformer
+
+
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
 def preprocess_image(image):
