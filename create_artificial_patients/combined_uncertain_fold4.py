@@ -19,47 +19,64 @@ from transformers import ViTFeatureExtractor
 from PIL import Image
 import types
 
-dinov2 = types.ModuleType("dinov2")
-sys.modules["dinov2"] = dinov2
 
-# Add a submodule named "models" to dinov2
-dinov2.models = types.ModuleType("models")
-sys.modules["dinov2.models"] = dinov2.models
+# Function to dynamically create and add a mock module to sys.modules
+def create_mock_module(full_name):
+    """Recursively create and add mock modules to sys.modules for the given full module name."""
+    components = full_name.split('.')
+    current_module = sys.modules
 
-# Add a submodule named "vision_transformer" to dinov2.models
-dinov2.models.vision_transformer = types.ModuleType("vision_transformer")
-sys.modules["dinov2.models.vision_transformer"] = dinov2.models.vision_transformer
+    # Traverse the components of the module name to create necessary nested modules
+    for i in range(len(components)):
+        module_name = '.'.join(components[:i + 1])
+        if module_name not in current_module:
+            new_module = types.ModuleType(module_name)
+            current_module[module_name] = new_module
+        current_module = sys.modules[module_name]
 
-# Create a mock class named "DinoVisionTransformer" inside vision_transformer
-class DinoVisionTransformer(nn.Module):
-    def __init__(self, *args, **kwargs):
-        super(DinoVisionTransformer, self).__init__()
-        # Define any simple mock structure here if needed for forward pass
 
-    def forward(self, x):
-        # Return the input as the mock behavior for forward pass
-        return x
+# Function to mock a class within a specific module
+def create_mock_class(module_name, class_name):
+    """Create a mock class inside a specific module in sys.modules."""
+    if module_name in sys.modules:
+        current_module = sys.modules[module_name]
 
-# Add the mock DinoVisionTransformer class to the vision_transformer submodule
-dinov2.models.vision_transformer.DinoVisionTransformer = DinoVisionTransformer
+        # Create a mock class
+        class MockClass(nn.Module):
+            def __init__(self, *args, **kwargs):
+                super(MockClass, self).__init__()
 
-# Add a submodule named "layers" to dinov2
-dinov2.layers = types.ModuleType("layers")
-sys.modules["dinov2.layers"] = dinov2.layers
+            def forward(self, x):
+                return x  # Mock forward function returns input unchanged
 
-# Create a mock class for any specific layers used by `dinov2.layers`
-# Assuming there might be a "LayerClass" or similar class expected by the model
-class MockLayer(nn.Module):
-    def __init__(self, *args, **kwargs):
-        super(MockLayer, self).__init__()
-        # Define any simple mock structure here if needed
+        setattr(current_module, class_name, MockClass)
 
-    def forward(self, x):
-        # Return the input as the mock behavior for forward pass
-        return x
 
-# Add this mock layer class to dinov2.layers
-dinov2.layers.LayerClass = MockLayer
+# A generic function to ensure any module, submodule, or class is mocked when referenced
+def ensure_dinov2_mocked(module_name, class_name):
+    """Ensure the dinov2 module, submodule, or class is mocked appropriately."""
+    # Mock the whole module path if it doesn't exist
+    create_mock_module(module_name)
+    # Mock the specific class if it doesn't exist
+    create_mock_class(module_name, class_name)
+
+
+# Hook into torch's loading process to catch any missing classes
+original_find_class = torch.serialization._get_restore_location
+
+
+def patched_find_class(mod_name, name):
+    # Check if the requested module starts with 'dinov2'
+    if mod_name.startswith("dinov2"):
+        print(f"Mocking: {mod_name}.{name}")
+        ensure_dinov2_mocked(mod_name, name)
+
+    # Proceed with the original method to load the class
+    return original_find_class(mod_name, name)
+
+
+# Patch the original loading function
+torch.serialization._get_restore_location = patched_find_class
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
