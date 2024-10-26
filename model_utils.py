@@ -654,25 +654,20 @@ def calculate_f1_from_confusion_matrix(confusion_matrix):
     FN = confusion_matrix.sum(axis=1) - TP
     
     # Calculate precision and recall for each class
-    precision = TP / (TP + FP)
-    precision[np.isnan(precision)] = 0
-    recall = TP / (TP + FN)
-    
-    # Avoid division by zero
-    precision = np.nan_to_num(precision)
-    recall = np.nan_to_num(recall)
-    
+    precision = np.divide(TP, (TP + FP), out=np.zeros_like(TP, dtype=float), where=(TP + FP) != 0)
+    recall = np.divide(TP, (TP + FN), out=np.zeros_like(TP, dtype=float), where=(TP + FN) != 0)
+
     # Calculate F1 score for each class
-    f1_scores_per_class = 2 * (precision * recall) / (precision + recall)
-    f1_scores_per_class[np.isnan(f1_scores_per_class)] = 0
-    
+    f1_scores_per_class = np.divide(2 * (precision * recall), (precision + recall),
+                                    out=np.zeros_like(precision, dtype=float), where=(precision + recall) != 0)
+
     # Calculate macro F1 score (simple average over classes)
     f1_macro = np.nanmean(f1_scores_per_class)
     
     # Calculate micro F1 score (total TP, FP, FN)
-    micro_precision = TP.sum() / (TP.sum() + FP.sum())
-    micro_recall = TP.sum() / (TP.sum() + FN.sum())
-    f1_micro = 2 * (micro_precision * micro_recall) / (micro_precision + micro_recall)
+    micro_precision = TP.sum() / (TP.sum() + FP.sum()) if (TP.sum() + FP.sum()) != 0 else 0
+    micro_recall = TP.sum() / (TP.sum() + FN.sum()) if (TP.sum() + FN.sum()) != 0 else 0
+    f1_micro = 2 * (micro_precision * micro_recall) / (micro_precision + micro_recall) if (micro_precision + micro_recall) != 0 else 0
     
     # Calculate weighted F1 score
     weights = confusion_matrix.sum(axis=1)
