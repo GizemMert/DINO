@@ -86,7 +86,7 @@ def get_dino_finetuned_downloaded(model_path, modelname):
 
     # pos_embed has wrong shape
     if model_path is not None:
-        pretrained = torch.load(model_path, map_location=torch.device("cpu"))
+        pretrained = torch.load(model_path, map_location=torch.device("cpu"), weights_only=False)
         # make correct state dict for loading
         new_state_dict = {}
         for key, value in pretrained["teacher"].items():
