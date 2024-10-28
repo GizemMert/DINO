@@ -22,6 +22,7 @@ import types
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
+
 def preprocess_image(image):
     """
     Preprocess the image using ViTFeatureExtractor, ensuring it is resized to 224x224.
@@ -137,14 +138,14 @@ def update_misclassification_count(probability_vector, one_hot_target, current_m
 
 # Number of Monte Carlo samples
 num_samples = 10
-
+model_path = "/home/aih/gizem.mert/Dino/DINO/DinoBloom-B.pth"
 # Set device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = ViTMiL(
     class_count=num_classes,
     multicolumn=1,
     device=device,
-    model_path=None
+    model_path=model_path
 )
 # Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
@@ -155,7 +156,7 @@ state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()
 # Load the state dict into the model
 model.load_state_dict(state_dict, strict=False)
 
-model = model.to(device)  # Move the model to the appropriate device
+model = model.to(device)
 
 
 model.train()
