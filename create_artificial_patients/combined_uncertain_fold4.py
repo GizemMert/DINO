@@ -71,7 +71,7 @@ n_classes = len(class_labels)
 experiment_source = 'experiment_3'
 real_data_source = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
 SOURCE_FOLDER = f'/home/aih/gizem.mert/Dino/DINO/fold4/artificial_data/'+experiment_source
-TARGET_FOLDER = '/home/aih/gizem.mert/Dino/DINO/Results_fold46'
+TARGET_FOLDER = '/home/aih/gizem.mert/Dino/DINO/Results_fold49'
 output_folder = f'/home/aih/gizem.mert/Dino/DINO/fold4/mixed_uncertain'
 
 train_csv_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/data_fold_4/train.csv'
