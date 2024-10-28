@@ -63,7 +63,7 @@ num_classes = 7
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
 label_to_diagnose = pd.read_csv(label_to_diagnose_path)
-label_to_diagnose_dict = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
+label_to_diagnose_dict_2 = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
 class_labels = label_to_diagnose['diagnose'].tolist()
 n_classes = len(class_labels)
 
