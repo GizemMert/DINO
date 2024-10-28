@@ -170,8 +170,11 @@ sum_uncertainties = {}
 with torch.no_grad():
     for folder_name in os.listdir(SOURCE_FOLDER):
         if folder_name.startswith('patient_'):
+            print(f"Processing folder: {folder_name}")
 
             diagnosis, patient_id = parse_patient_folder(folder_name)
+            print(f"Parsed diagnosis: {diagnosis}, patient_id: {patient_id}")
+
             patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
             if diagnosis in label_to_diagnose_dict:
