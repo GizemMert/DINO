@@ -70,7 +70,7 @@ n_classes = len(class_labels)
 # seed = 42
 experiment_source = 'experiment_3'
 real_data_source = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
-SOURCE_FOLDER = f'/home/aih/gizem.mert/Dino/DINO/fold1/artificial_data/'+experiment_source
+SOURCE_FOLDER = f'/home/aih/gizem.mert/Dino/DINO/fold1/artificial_data/{experiment_source}/data'
 TARGET_FOLDER = '/home/aih/gizem.mert/Dino/DINO/Results_fold16'
 output_folder = f'/home/aih/gizem.mert/Dino/DINO/fold1/mixed_uncertain'
 
