@@ -14,4 +14,4 @@ source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
 conda activate my_new_env
 
 # Run the Python script
-python 3_shuffle_images_distribution.py
+python combined_uncertain_fold0.py
