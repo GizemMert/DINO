@@ -20,64 +20,6 @@ from PIL import Image
 import types
 
 
-# Function to dynamically create and add a mock module to sys.modules
-def create_mock_module(full_name):
-    """Recursively create and add mock modules to sys.modules for the given full module name."""
-    components = full_name.split('.')
-    current_module = sys.modules
-
-    # Traverse the components of the module name to create necessary nested modules
-    for i in range(len(components)):
-        module_name = '.'.join(components[:i + 1])
-        if module_name not in current_module:
-            new_module = types.ModuleType(module_name)
-            current_module[module_name] = new_module
-        current_module = sys.modules[module_name]
-
-
-# Function to mock a class within a specific module
-def create_mock_class(module_name, class_name):
-    """Create a mock class inside a specific module in sys.modules."""
-    if module_name in sys.modules:
-        current_module = sys.modules[module_name]
-
-        # Create a mock class
-        class MockClass(nn.Module):
-            def __init__(self, *args, **kwargs):
-                super(MockClass, self).__init__()
-
-            def forward(self, x):
-                return x  # Mock forward function returns input unchanged
-
-        setattr(current_module, class_name, MockClass)
-
-
-# A generic function to ensure any module, submodule, or class is mocked when referenced
-def ensure_dinov2_mocked(module_name, class_name):
-    """Ensure the dinov2 module, submodule, or class is mocked appropriately."""
-    # Mock the whole module path if it doesn't exist
-    create_mock_module(module_name)
-    # Mock the specific class if it doesn't exist
-    create_mock_class(module_name, class_name)
-
-
-# Hook into torch's loading process to catch any missing classes
-original_find_class = torch.serialization._get_restore_location
-
-
-def patched_find_class(mod_name, name):
-    # Check if the requested module starts with 'dinov2'
-    if mod_name.startswith("dinov2"):
-        print(f"Mocking: {mod_name}.{name}")
-        ensure_dinov2_mocked(mod_name, name)
-
-    # Proceed with the original method to load the class
-    return original_find_class(mod_name, name)
-
-
-# Patch the original loading function
-torch.serialization._get_restore_location = patched_find_class
-
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
 def preprocess_image(image):
@@ -183,8 +125,7 @@ def load_image_paths(patient_folder):
 
 
 
-# Now `patients` will have all the patient keys (e.g., "patient_MDS_1") with the associated folder paths and diagnoses.
-# print(f"Total patients loaded: {len(patients)}")
+
 
 # Function to update misclassification count
 def update_misclassification_count(probability_vector, one_hot_target, current_misclassification_count):
@@ -196,43 +137,50 @@ def update_misclassification_count(probability_vector, one_hot_target, current_m
 
 # Number of Monte Carlo samples
 num_samples = 10
-
+model_path = "/home/aih/gizem.mert/Dino/DINO/DinoBloom-B.pth"
 # Set device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
+model = ViTMiL(
+    class_count=num_classes,
+    multicolumn=1,
+    device=device,
+    model_path=model_path
+)
 # Load model
-model_path = os.path.join(TARGET_FOLDER, "model.pt")
-model = torch.load(model_path, map_location="cpu")
-model = model.to(device)  # Move the model to the appropriate device
+state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
+pretrained_weights = torch.load(state_dict_path, map_location="cpu")
 
-# Set the model to training mode (since you're likely doing Monte Carlo sampling)
+state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
+
+# Load the state dict into the model
+model.load_state_dict(state_dict, strict=False)
+
+model = model.to(device)
+
+
 model.train()
 
-# Initialize arrays to store uncertainties
+
 all_uncertainties = {}
 missclassification_counts = {}
 max_uncertainties = {}
 sum_uncertainties = {}
 
-# Iterate over all patient folders in the source folder
 for folder_name in os.listdir(SOURCE_FOLDER):
     if folder_name.startswith('patient_'):
-        # Parse folder name to get diagnosis and patient ID
+
         diagnosis, patient_id = parse_patient_folder(folder_name)
         patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
-        # Get the label from the CSV using the diagnosis
         if diagnosis in label_to_diagnose_dict:
             label_index = label_to_diagnose_dict[diagnosis]
         else:
             print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
             continue
 
-        # Create label as a one-hot vector
         lbl = np.zeros(num_classes)
         lbl[label_index] = 1
 
-        # Load and preprocess images once (this handles preprocessing)
         images, image_paths = load_images_from_txt(os.path.join(patient_folder, 'images.txt'))
 
         pred = []
@@ -241,22 +189,19 @@ for folder_name in os.listdir(SOURCE_FOLDER):
         # Perform Monte Carlo Dropout
         with torch.no_grad():
             for j in range(num_samples):
-                # Use preprocessed images (no need to preprocess again)
-                bag = torch.stack(images).to(device)
-                bag = torch.unsqueeze(bag, 0)  # Add batch dimension
 
-                # Forward pass with model
+                bag = torch.stack(images).to(device)
+                bag = torch.unsqueeze(bag, 0)
+
                 prediction = model(bag)
                 pred.append(torch.softmax(prediction, dim=1).cpu().detach().numpy())
 
-                # Update misclassification count
                 missclassification_count = update_misclassification_count(
                     torch.softmax(prediction, dim=1),
                     torch.tensor(lbl),
                     missclassification_count
                 )
 
-        # Convert predictions to tensor and compute mean and uncertainty
         pred_tensor = torch.stack([torch.from_numpy(arr) for arr in pred])
         mean_prediction = pred_tensor.mean(dim=0)
         uncertainty = pred_tensor.std(dim=0)
@@ -264,7 +209,6 @@ for folder_name in os.listdir(SOURCE_FOLDER):
         uncertainty_value_max = torch.max(uncertainty).item()
         uncertainty_value_sum = torch.sum(uncertainty).item()
 
-        # Store uncertainty information
         max_uncertainties[folder_name] = {
             'path': patient_folder,
             'data': uncertainty.cpu().numpy().squeeze(),
@@ -305,19 +249,18 @@ def get_realpatients_filepaths_dictionary(data_directory, patient_to_label):
 
     # Iterate over all patient folders in the raw images directory
     for folder_patient in os.listdir(data_directory):
-        # Check if the folder is in the patient_to_label mapping (i.e., selected in train.csv)
+
         if folder_patient not in patient_to_label:
-            continue  # Skip if this patient is not in the selected patients
+            continue
 
         # Get the full path to the patient folder
         folder_patient_path = os.path.join(data_directory, folder_patient)
 
-        # Ensure it's a directory
+
         if os.path.isdir(folder_patient_path):
             # Gather all image files from the patient folder
-            images = get_image_path_list(folder_patient_path)  # Assume this gets all image files in the folder
+            images = get_image_path_list(folder_patient_path)
 
-            # Store the image paths under the patient folder name
             paths[folder_patient] = images
 
     return paths
@@ -338,9 +281,9 @@ def save_patient_filepaths(selected_paths, new_folder, paths_real_patients):
     # Add uncertain patients to the paths
     for p, path in selected_paths.items():
         if p in paths_mixed_patients:
-            paths_mixed_patients[p] += path  # Append uncertain paths if patient exists
+            paths_mixed_patients[p] += path
         else:
-            paths_mixed_patients[p] = path  # Create new entry for uncertain patient
+            paths_mixed_patients[p] = path
 
     # Remove duplicates
     for key in paths_mixed_patients.keys():
@@ -356,14 +299,8 @@ def save_patient_filepaths(selected_paths, new_folder, paths_real_patients):
 
 
 def update_train_files_with_artificial(new_folder, selected_paths, train_csv_path, label_to_diagnose_dict):
-    """
-    Update the training files (train.csv) with both real and artificial patient IDs and labels, and save it as mixed_train.csv.
-    - `new_folder`: The folder where the new mixed_train.csv will be saved.
-    - `selected_paths`: Dictionary of selected uncertain patient paths.
-    - `train_csv_path`: Path to the original train.csv for real patients.
-    - `label_to_diagnose_dict`: Dictionary mapping diagnoses to labels.
-    """
-    # Load the real patient train.csv
+
+
     train_files = pd.read_csv(train_csv_path)
 
     # Create a new DataFrame for artificial patients
