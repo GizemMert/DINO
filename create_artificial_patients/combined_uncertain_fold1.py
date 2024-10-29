@@ -162,10 +162,7 @@ except Exception as e:
 
 model.train()  # Set model to training mode to keep dropout active
 
-# Check dropout layers if you want to verify dropout activation
-for name, module in model.named_modules():
-    if isinstance(module, torch.nn.Dropout):
-        print(f"Dropout layer {name} is active with probability {module.p}")
+
 
 # Initialize dictionaries to hold uncertainty measures
 all_uncertainties = {}
