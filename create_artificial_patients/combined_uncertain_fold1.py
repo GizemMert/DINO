@@ -140,25 +140,25 @@ num_samples = 10
 print("Attempting to load the model...")
 
 model_path = "/home/aih/gizem.mert/Dino/DINO/DinoBloom-B.pth"
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+model = ViTMiL(
+    class_count=num_classes,
+    multicolumn=1,
+    device=device,
+    model_path=model_path
+)
+# Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+pretrained_weights = torch.load(state_dict_path, map_location="cpu", weights_only=True)
 
-try:
-    model = ViTMiL(
-        class_count=num_classes,
-        multicolumn=1,
-        device=device,
-        model_path=model_path
-    )
-    pretrained_weights = torch.load(state_dict_path, map_location=device)
-    state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
-    model.load_state_dict(state_dict, strict=False)
-    model = model.to(device)
+state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
 
-    print("Model loaded successfully and moved to:", device)
-except Exception as e:
-    print(f"Error loading model: {e}")
-    exit(1)
+# Load the state dict into the model
+model.load_state_dict(state_dict, strict=False)
+
+model = model.to(device)
+
+print("Model loaded successfully and moved to:", device)
 
 model.train()  # Set model to training mode to keep dropout active
 
@@ -180,12 +180,14 @@ with torch.no_grad():
             print(f"Processing folder: {folder_name}")
 
             diagnosis, patient_id = parse_patient_folder(folder_name)
+            print(f"Parsed diagnosis: {diagnosis}, patient_id: {patient_id}")
+
             patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
             if diagnosis in label_to_diagnose_dict:
                 label_index = label_to_diagnose_dict[diagnosis]
             else:
-                print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
+                print(f"Diagnosis '{diagnosis}' not found for patient {folder_name}")
                 continue
 
             lbl = np.zeros(num_classes)
