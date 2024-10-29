@@ -2,7 +2,6 @@
 
 #SBATCH --output=o_fold1_%j_cap.job
 #SBATCH --error=e_fold1_%j_cap.job
-
 #SBATCH --partition=cpu_p
 #SBATCH --qos=cpu_normal
 #SBATCH --cpus-per-task=10

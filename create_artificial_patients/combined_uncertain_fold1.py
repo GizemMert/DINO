@@ -137,9 +137,8 @@ def update_misclassification_count(probability_vector, one_hot_target, current_m
 
 # Number of Monte Carlo samples
 num_samples = 10
-print("Attempting to load the model...")
-
 model_path = "/home/aih/gizem.mert/Dino/DINO/DinoBloom-B.pth"
+# Set device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = ViTMiL(
     class_count=num_classes,
@@ -149,7 +148,8 @@ model = ViTMiL(
 )
 # Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-pretrained_weights = torch.load(state_dict_path, map_location="cpu", weights_only=True)
+pretrained_weights = torch.load(state_dict_path, map_location=device)
+
 
 state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
 
@@ -158,36 +158,27 @@ model.load_state_dict(state_dict, strict=False)
 
 model = model.to(device)
 
-print("Model loaded successfully and moved to:", device)
 
-model.train()  # Set model to training mode to keep dropout active
+model.train()  # Set the model to training mode to keep dropout active
 
-
-
-# Initialize dictionaries to hold uncertainty measures
 all_uncertainties = {}
 missclassification_counts = {}
 max_uncertainties = {}
 sum_uncertainties = {}
 
-
-
 # No gradient calculation for uncertainty estimation, but model.train() keeps dropout active
-print("Starting uncertainty estimation loop...")
 with torch.no_grad():
     for folder_name in os.listdir(SOURCE_FOLDER):
         if folder_name.startswith('patient_'):
             print(f"Processing folder: {folder_name}")
 
             diagnosis, patient_id = parse_patient_folder(folder_name)
-            print(f"Parsed diagnosis: {diagnosis}, patient_id: {patient_id}")
-
             patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
             if diagnosis in label_to_diagnose_dict:
                 label_index = label_to_diagnose_dict[diagnosis]
             else:
-                print(f"Diagnosis '{diagnosis}' not found for patient {folder_name}")
+                print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
                 continue
 
             lbl = np.zeros(num_classes)
@@ -214,7 +205,7 @@ with torch.no_grad():
 
                 missclassification_count = update_misclassification_count(
                     softmax_pred,
-                    torch.tensor(lbl).to(device),
+                    torch.tensor(lbl),
                     missclassification_count
                 )
 
@@ -223,7 +214,7 @@ with torch.no_grad():
                 continue
 
             # Calculate mean and uncertainty of predictions
-            pred_tensor = torch.stack([torch.from_numpy(arr).to(device) for arr in pred])
+            pred_tensor = torch.stack([torch.from_numpy(arr) for arr in pred])
             mean_prediction = pred_tensor.mean(dim=0)
             uncertainty = pred_tensor.std(dim=0)
 
@@ -245,6 +236,7 @@ with torch.no_grad():
                 'path': patient_folder,
                 'uncertainty': missclassification_count / num_samples
             }
+
 print("Total patients with recorded max uncertainties:", len(max_uncertainties))
 
 def sort_and_print(uncertainties):
