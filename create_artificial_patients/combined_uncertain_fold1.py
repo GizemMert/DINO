@@ -137,34 +137,43 @@ def update_misclassification_count(probability_vector, one_hot_target, current_m
 
 # Number of Monte Carlo samples
 num_samples = 10
+print("Attempting to load the model...")
+
 model_path = "/home/aih/gizem.mert/Dino/DINO/DinoBloom-B.pth"
-# Set device
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-model = ViTMiL(
-    class_count=num_classes,
-    multicolumn=1,
-    device=device,
-    model_path=model_path
-)
-# Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-pretrained_weights = torch.load(state_dict_path, map_location=device)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+try:
+    model = ViTMiL(
+        class_count=num_classes,
+        multicolumn=1,
+        device=device,
+        model_path=model_path
+    )
+    pretrained_weights = torch.load(state_dict_path, map_location=device)
+    state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
+    model.load_state_dict(state_dict, strict=False)
+    model = model.to(device)
 
-state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
+    print("Model loaded successfully and moved to:", device)
+except Exception as e:
+    print(f"Error loading model: {e}")
+    exit(1)
 
-# Load the state dict into the model
-model.load_state_dict(state_dict, strict=False)
+model.train()  # Set model to training mode to keep dropout active
 
-model = model.to(device)
+# Check dropout layers if you want to verify dropout activation
+for name, module in model.named_modules():
+    if isinstance(module, torch.nn.Dropout):
+        print(f"Dropout layer {name} is active with probability {module.p}")
 
-
-model.eval()  # Set the model to training mode to keep dropout active
-
+# Initialize dictionaries to hold uncertainty measures
 all_uncertainties = {}
 missclassification_counts = {}
 max_uncertainties = {}
 sum_uncertainties = {}
+
+
 
 # No gradient calculation for uncertainty estimation, but model.train() keeps dropout active
 print("Starting uncertainty estimation loop...")
