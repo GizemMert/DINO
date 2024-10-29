@@ -148,7 +148,8 @@ model = ViTMiL(
 )
 # Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-pretrained_weights = torch.load(state_dict_path, map_location="cpu")
+pretrained_weights = torch.load(state_dict_path, map_location=device)
+
 
 state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
 
@@ -192,7 +193,6 @@ with torch.no_grad():
 
             pred = []
             missclassification_count = 0
-
             # Perform Monte Carlo Dropout sampling
             for j in range(num_samples):
                 bag = torch.stack(images).to(device)
@@ -205,7 +205,7 @@ with torch.no_grad():
 
                 missclassification_count = update_misclassification_count(
                     softmax_pred,
-                    torch.tensor(lbl),
+                    torch.tensor(lbl).to(device),
                     missclassification_count
                 )
 
@@ -214,7 +214,7 @@ with torch.no_grad():
                 continue
 
             # Calculate mean and uncertainty of predictions
-            pred_tensor = torch.stack([torch.from_numpy(arr) for arr in pred])
+            pred_tensor = torch.stack([torch.from_numpy(arr).to(device) for arr in pred])
             mean_prediction = pred_tensor.mean(dim=0)
             uncertainty = pred_tensor.std(dim=0)
 
@@ -236,7 +236,6 @@ with torch.no_grad():
                 'path': patient_folder,
                 'uncertainty': missclassification_count / num_samples
             }
-
 print("Total patients with recorded max uncertainties:", len(max_uncertainties))
 
 def sort_and_print(uncertainties):
