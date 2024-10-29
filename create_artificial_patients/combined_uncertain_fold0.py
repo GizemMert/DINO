@@ -22,7 +22,6 @@ import types
 
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
-
 def preprocess_image(image):
     """
     Preprocess the image using ViTFeatureExtractor, ensuring it is resized to 224x224.
@@ -64,14 +63,14 @@ num_classes = 7
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
 label_to_diagnose = pd.read_csv(label_to_diagnose_path)
-label_to_diagnose_dict = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
+label_to_diagnose_dict_2 = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
 class_labels = label_to_diagnose['diagnose'].tolist()
 n_classes = len(class_labels)
 
 # seed = 42
 experiment_source = 'experiment_3'
 real_data_source = '/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages'
-SOURCE_FOLDER = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/'+experiment_source
+SOURCE_FOLDER = f'/home/aih/gizem.mert/Dino/DINO/fold0/artificial_data/{experiment_source}/data'
 TARGET_FOLDER = '/home/aih/gizem.mert/Dino/DINO/Results_fold07'
 output_folder = f'/home/aih/gizem.mert/Dino/DINO/fold0/mixed_uncertain'
 
@@ -149,7 +148,8 @@ model = ViTMiL(
 )
 # Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-pretrained_weights = torch.load(state_dict_path, map_location="cpu", weights_only=True)
+pretrained_weights = torch.load(state_dict_path, map_location=device)
+
 
 state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
 
@@ -159,28 +159,26 @@ model.load_state_dict(state_dict, strict=False)
 model = model.to(device)
 
 
-model.train()
-
+model.train()  # Set the model to training mode to keep dropout active
 
 all_uncertainties = {}
 missclassification_counts = {}
 max_uncertainties = {}
 sum_uncertainties = {}
 
+# No gradient calculation for uncertainty estimation, but model.train() keeps dropout active
 with torch.no_grad():
     for folder_name in os.listdir(SOURCE_FOLDER):
         if folder_name.startswith('patient_'):
             print(f"Processing folder: {folder_name}")
 
             diagnosis, patient_id = parse_patient_folder(folder_name)
-            print(f"Parsed diagnosis: {diagnosis}, patient_id: {patient_id}")
-
             patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
             if diagnosis in label_to_diagnose_dict:
                 label_index = label_to_diagnose_dict[diagnosis]
             else:
-                print(f"Diagnosis '{diagnosis}' not found for patient {folder_name}")
+                print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
                 continue
 
             lbl = np.zeros(num_classes)
@@ -189,36 +187,28 @@ with torch.no_grad():
             # Load images and paths
             images, image_paths = load_images_from_txt(os.path.join(patient_folder, 'images.txt'))
 
-            print(f"Loaded {len(images)} images for patient folder {folder_name}")
             if len(images) == 0:
                 print(f"No images found for patient {folder_name}")
                 continue
 
             pred = []
             missclassification_count = 0
-
             # Perform Monte Carlo Dropout sampling
             for j in range(num_samples):
-                # Stack images into a batch and move to device
                 bag = torch.stack(images).to(device)
                 bag = torch.unsqueeze(bag, 0)
 
                 # Forward pass and softmax
                 prediction = model(bag)
                 softmax_pred = torch.softmax(prediction, dim=1)
-                pred.append(softmax_pred.cpu().detach().numpy())
+                pred.append(softmax_pred.cpu().numpy())
 
-                print(f"Prediction shape: {prediction.shape} for patient {folder_name}")
-                print(f"Softmax output for sample {j}: {softmax_pred.cpu().numpy()}")
-
-                # Update misclassification count
                 missclassification_count = update_misclassification_count(
                     softmax_pred,
                     torch.tensor(lbl),
                     missclassification_count
                 )
 
-            print(f"Collected {len(pred)} predictions for patient {folder_name}")
             if len(pred) == 0:
                 print(f"No predictions collected for patient {folder_name}")
                 continue
@@ -231,9 +221,6 @@ with torch.no_grad():
             # Store max and sum uncertainties
             uncertainty_value_max = torch.max(uncertainty).item()
             uncertainty_value_sum = torch.sum(uncertainty).item()
-
-            print(f"Max uncertainty for {folder_name}: {uncertainty_value_max}")
-            print(f"Sum uncertainty for {folder_name}: {uncertainty_value_sum}")
 
             max_uncertainties[folder_name] = {
                 'path': patient_folder,
@@ -249,6 +236,7 @@ with torch.no_grad():
                 'path': patient_folder,
                 'uncertainty': missclassification_count / num_samples
             }
+
 print("Total patients with recorded max uncertainties:", len(max_uncertainties))
 
 def sort_and_print(uncertainties):
@@ -257,11 +245,9 @@ def sort_and_print(uncertainties):
         print(f"Patient {p}: Uncertainty - {data['uncertainty']:.4}")
 
 sort_and_print(max_uncertainties)
+
 print(f"Total patients in max uncertainties: {len(max_uncertainties.keys())}")
 print(f"Unique patients in max uncertainties: {len(set(max_uncertainties.keys()))}")
-
-print(len(max_uncertainties.keys()))
-print(len(set(max_uncertainties.keys())))
 
 def select_paths(uncertainties, percentage):
     sorted_uncertainties = dict(sorted(uncertainties.items(), key=lambda item: item[1]['uncertainty'], reverse=True))
@@ -348,7 +334,6 @@ def update_train_files_with_artificial(new_folder, selected_paths, train_csv_pat
 
     # Combine real and artificial patients into a new DataFrame
     mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
-    mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
 
     # Save the new train.csv as mixed_train.csv
     mixed_train_csv_path = os.path.join(new_folder, "mixed_train.csv")
@@ -371,3 +356,4 @@ for percentage in [10, 20, 30, 50]:
 
     # Update the train.csv with the artificial patients and save
     update_train_files_with_artificial(new_folder_max, selected_max_paths, train_csv_path, label_to_diagnose_dict)
+

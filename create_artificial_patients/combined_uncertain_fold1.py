@@ -334,7 +334,6 @@ def update_train_files_with_artificial(new_folder, selected_paths, train_csv_pat
 
     # Combine real and artificial patients into a new DataFrame
     mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
-    mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
 
     # Save the new train.csv as mixed_train.csv
     mixed_train_csv_path = os.path.join(new_folder, "mixed_train.csv")

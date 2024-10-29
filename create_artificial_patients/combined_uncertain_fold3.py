@@ -63,7 +63,7 @@ num_classes = 7
 # Load class label information from CSV
 label_to_diagnose_path = '/home/aih/gizem.mert/Dino/DINO/data_cross_val/label_to_diagnose.csv'
 label_to_diagnose = pd.read_csv(label_to_diagnose_path)
-label_to_diagnose_dict = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
+label_to_diagnose_dict_2 = dict(zip(label_to_diagnose['label'], label_to_diagnose['diagnose']))
 class_labels = label_to_diagnose['diagnose'].tolist()
 n_classes = len(class_labels)
 
@@ -148,7 +148,8 @@ model = ViTMiL(
 )
 # Load model
 state_dict_path = os.path.join(TARGET_FOLDER, "state_dictmodel.pt")
-pretrained_weights = torch.load(state_dict_path, map_location="cpu")
+pretrained_weights = torch.load(state_dict_path, map_location=device)
+
 
 state_dict = {k.replace("module.", ""): v for k, v in pretrained_weights.items()}
 
@@ -158,71 +159,85 @@ model.load_state_dict(state_dict, strict=False)
 model = model.to(device)
 
 
-model.train()
-
+model.train()  # Set the model to training mode to keep dropout active
 
 all_uncertainties = {}
 missclassification_counts = {}
 max_uncertainties = {}
 sum_uncertainties = {}
 
-for folder_name in os.listdir(SOURCE_FOLDER):
-    if folder_name.startswith('patient_'):
+# No gradient calculation for uncertainty estimation, but model.train() keeps dropout active
+with torch.no_grad():
+    for folder_name in os.listdir(SOURCE_FOLDER):
+        if folder_name.startswith('patient_'):
+            print(f"Processing folder: {folder_name}")
 
-        diagnosis, patient_id = parse_patient_folder(folder_name)
-        patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
+            diagnosis, patient_id = parse_patient_folder(folder_name)
+            patient_folder = os.path.join(SOURCE_FOLDER, folder_name)
 
-        if diagnosis in label_to_diagnose_dict:
-            label_index = label_to_diagnose_dict[diagnosis]
-        else:
-            print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
-            continue
+            if diagnosis in label_to_diagnose_dict:
+                label_index = label_to_diagnose_dict[diagnosis]
+            else:
+                print(f"Warning: Diagnosis '{diagnosis}' not found in label_to_diagnose_dict")
+                continue
 
-        lbl = np.zeros(num_classes)
-        lbl[label_index] = 1
+            lbl = np.zeros(num_classes)
+            lbl[label_index] = 1
 
-        images, image_paths = load_images_from_txt(os.path.join(patient_folder, 'images.txt'))
+            # Load images and paths
+            images, image_paths = load_images_from_txt(os.path.join(patient_folder, 'images.txt'))
 
-        pred = []
-        missclassification_count = 0
+            if len(images) == 0:
+                print(f"No images found for patient {folder_name}")
+                continue
 
-        # Perform Monte Carlo Dropout
-        with torch.no_grad():
+            pred = []
+            missclassification_count = 0
+            # Perform Monte Carlo Dropout sampling
             for j in range(num_samples):
-
                 bag = torch.stack(images).to(device)
                 bag = torch.unsqueeze(bag, 0)
 
+                # Forward pass and softmax
                 prediction = model(bag)
-                pred.append(torch.softmax(prediction, dim=1).cpu().detach().numpy())
+                softmax_pred = torch.softmax(prediction, dim=1)
+                pred.append(softmax_pred.cpu().numpy())
 
                 missclassification_count = update_misclassification_count(
-                    torch.softmax(prediction, dim=1),
+                    softmax_pred,
                     torch.tensor(lbl),
                     missclassification_count
                 )
 
-        pred_tensor = torch.stack([torch.from_numpy(arr) for arr in pred])
-        mean_prediction = pred_tensor.mean(dim=0)
-        uncertainty = pred_tensor.std(dim=0)
+            if len(pred) == 0:
+                print(f"No predictions collected for patient {folder_name}")
+                continue
 
-        uncertainty_value_max = torch.max(uncertainty).item()
-        uncertainty_value_sum = torch.sum(uncertainty).item()
+            # Calculate mean and uncertainty of predictions
+            pred_tensor = torch.stack([torch.from_numpy(arr) for arr in pred])
+            mean_prediction = pred_tensor.mean(dim=0)
+            uncertainty = pred_tensor.std(dim=0)
 
-        max_uncertainties[folder_name] = {
-            'path': patient_folder,
-            'data': uncertainty.cpu().numpy().squeeze(),
-            'uncertainty': uncertainty_value_max
-        }
-        sum_uncertainties[folder_name] = {
-            'path': patient_folder,
-            'data': uncertainty.cpu().numpy().squeeze(),
-            'uncertainty': uncertainty_value_sum
-        }
-        missclassification_counts[folder_name] = {
-            'path': patient_folder,
-            'uncertainty': missclassification_count / num_samples
-        }
+            # Store max and sum uncertainties
+            uncertainty_value_max = torch.max(uncertainty).item()
+            uncertainty_value_sum = torch.sum(uncertainty).item()
+
+            max_uncertainties[folder_name] = {
+                'path': patient_folder,
+                'data': uncertainty.cpu().numpy().squeeze(),
+                'uncertainty': uncertainty_value_max
+            }
+            sum_uncertainties[folder_name] = {
+                'path': patient_folder,
+                'data': uncertainty.cpu().numpy().squeeze(),
+                'uncertainty': uncertainty_value_sum
+            }
+            missclassification_counts[folder_name] = {
+                'path': patient_folder,
+                'uncertainty': missclassification_count / num_samples
+            }
+
+print("Total patients with recorded max uncertainties:", len(max_uncertainties))
 
 def sort_and_print(uncertainties):
     sorted_uncertainties = dict(sorted(uncertainties.items(), key=lambda item: item[1]['uncertainty'], reverse=True))
@@ -231,8 +246,8 @@ def sort_and_print(uncertainties):
 
 sort_and_print(max_uncertainties)
 
-print(len(max_uncertainties.keys()))
-print(len(set(max_uncertainties.keys())))
+print(f"Total patients in max uncertainties: {len(max_uncertainties.keys())}")
+print(f"Unique patients in max uncertainties: {len(set(max_uncertainties.keys()))}")
 
 def select_paths(uncertainties, percentage):
     sorted_uncertainties = dict(sorted(uncertainties.items(), key=lambda item: item[1]['uncertainty'], reverse=True))
@@ -318,7 +333,6 @@ def update_train_files_with_artificial(new_folder, selected_paths, train_csv_pat
             artificial_patients = artificial_patients.append({'patient_files': p, 'labels': label}, ignore_index=True)
 
     # Combine real and artificial patients into a new DataFrame
-    mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
     mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
 
     # Save the new train.csv as mixed_train.csv
