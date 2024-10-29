@@ -159,7 +159,7 @@ model.load_state_dict(state_dict, strict=False)
 model = model.to(device)
 
 
-model.train()  # Set the model to training mode to keep dropout active
+model.eval()  # Set the model to training mode to keep dropout active
 
 all_uncertainties = {}
 missclassification_counts = {}
@@ -167,6 +167,7 @@ max_uncertainties = {}
 sum_uncertainties = {}
 
 # No gradient calculation for uncertainty estimation, but model.train() keeps dropout active
+print("Starting uncertainty estimation loop...")
 with torch.no_grad():
     for folder_name in os.listdir(SOURCE_FOLDER):
         if folder_name.startswith('patient_'):
