@@ -14,4 +14,4 @@
 
 source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
 conda activate my_new_env
-python -u train_2.py --fold 4 > output_fold4_loss.txt
+python -u train.py --fold 4 > output_fold4_loss.txt
