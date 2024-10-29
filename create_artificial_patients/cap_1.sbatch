@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --output=slurm_pyscript_%j_fold0.job
-#SBATCH --error=slurm_error_%j_fold0.job
+#SBATCH --output=slurm_pyscript_%j_fold1.job
+#SBATCH --error=slurm_error_%j_fold1.job
 #SBATCH --partition=gpu_p
 #SBATCH --qos=gpu_normal
 #SBATCH --gres=gpu:1
