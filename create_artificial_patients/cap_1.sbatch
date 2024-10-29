@@ -1,12 +1,14 @@
 #!/bin/bash
 
-#SBATCH --output=o_fold1_%j_cap.job
-#SBATCH --error=e_fold1_%j_cap.job
-#SBATCH --partition=cpu_p
-#SBATCH --qos=cpu_normal
-#SBATCH --cpus-per-task=10
-#SBATCH --mem=50G
-#SBATCH --time=72:00:00
+#SBATCH --output=slurm_pyscript_%j_fold0.job
+#SBATCH --error=slurm_error_%j_fold0.job
+#SBATCH --partition=gpu_p
+#SBATCH --qos=gpu_normal
+#SBATCH --gres=gpu:1
+
+#SBATCH --time=48:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=60G
 #SBATCH --nice=10000
 
 # Load the conda environment
