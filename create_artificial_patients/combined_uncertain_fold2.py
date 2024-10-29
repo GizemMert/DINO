@@ -193,6 +193,9 @@ with torch.no_grad():
 
             pred = []
             missclassification_count = 0
+            print(f"Starting Monte Carlo Dropout sampling for {folder_name} with {num_samples} samples.")
+
+
             # Perform Monte Carlo Dropout sampling
             for j in range(num_samples):
                 bag = torch.stack(images).to(device)
@@ -202,6 +205,7 @@ with torch.no_grad():
                 prediction = model(bag)
                 softmax_pred = torch.softmax(prediction, dim=1)
                 pred.append(softmax_pred.cpu().numpy())
+                print(f"Sample {j+1}: Collected softmax prediction for {folder_name}.")
 
                 missclassification_count = update_misclassification_count(
                     softmax_pred,
@@ -221,6 +225,9 @@ with torch.no_grad():
             # Store max and sum uncertainties
             uncertainty_value_max = torch.max(uncertainty).item()
             uncertainty_value_sum = torch.sum(uncertainty).item()
+
+            print(f"Max uncertainty for {folder_name}: {uncertainty_value_max}")
+            print(f"Sum uncertainty for {folder_name}: {uncertainty_value_sum}")
 
             max_uncertainties[folder_name] = {
                 'path': patient_folder,
