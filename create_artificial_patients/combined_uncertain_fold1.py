@@ -314,12 +314,11 @@ def save_patient_filepaths(selected_paths, new_folder, paths_real_patients):
 
 
 def update_train_files_with_artificial(new_folder, selected_paths, train_csv_path, label_to_diagnose_dict):
-
-
+    # Load the original train.csv file
     train_files = pd.read_csv(train_csv_path)
 
-    # Create a new DataFrame for artificial patients
-    artificial_patients = pd.DataFrame(columns=['patient_files', 'labels'])
+    # Create a list to store artificial patient data
+    artificial_patient_data = []
 
     # Iterate over uncertain patients and get their labels from the folder name
     for p in selected_paths.keys():
@@ -329,8 +328,11 @@ def update_train_files_with_artificial(new_folder, selected_paths, train_csv_pat
         label = label_to_diagnose_dict.get(diagnosis)
 
         if label is not None:
-            # Add the artificial patient to the DataFrame
-            artificial_patients = artificial_patients.append({'patient_files': p, 'labels': label}, ignore_index=True)
+            # Append data as a dictionary to the list
+            artificial_patient_data.append({'patient_files': p, 'labels': label})
+
+    # Convert the list of dictionaries to a DataFrame
+    artificial_patients = pd.DataFrame(artificial_patient_data, columns=['patient_files', 'labels'])
 
     # Combine real and artificial patients into a new DataFrame
     mixed_train_files = pd.concat([train_files, artificial_patients], ignore_index=True)
@@ -339,6 +341,7 @@ def update_train_files_with_artificial(new_folder, selected_paths, train_csv_pat
     mixed_train_csv_path = os.path.join(new_folder, "mixed_train.csv")
     mixed_train_files.to_csv(mixed_train_csv_path, index=False)
     print(f"Mixed train.csv saved to {mixed_train_csv_path}")
+
 
 
 
