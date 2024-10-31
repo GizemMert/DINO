@@ -12,16 +12,9 @@
 #SBATCH --mem=60G
 #SBATCH --nice=10000
 
-source /home/aih/gizem.mert/mambaforge/etc/profile.d/conda.sh
-conda activate mynewenv
+/home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
+conda activate myenv
 
-# Manually set the PATH to point to the correct environment Python first
-export PATH="/home/aih/gizem.mert/mambaforge/envs/mynewenv/bin:$PATH"
-
-# Debug information to ensure the correct Python environment
-echo "Environment: $CONDA_DEFAULT_ENV"
-which python
-python --version
 
 # Run the Python script using full path to ensure correct environment
 /home/aih/gizem.mert/mambaforge/envs/mynewenv/bin/python -u train.py --fold 4 > output_fold4_1_loss.txt
