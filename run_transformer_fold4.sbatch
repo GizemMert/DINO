@@ -14,4 +14,10 @@
 
 source /home/aih/gizem.mert/mambaforge/etc/profile.d/conda.sh
 conda activate mynewenv
+
+# Debugging: Print out the environment variables to check if they are set correctly
+echo "Environment: $CONDA_DEFAULT_ENV"
+which python
+python --version
+
 python -u train.py --fold 4 > output_fold4_loss.txt
