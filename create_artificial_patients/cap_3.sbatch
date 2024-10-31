@@ -10,8 +10,8 @@
 #SBATCH --nice=10000
 
 # Load the conda environment
-source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
-conda activate my_new_env
+source /home/aih/gizem.mert/mambaforge/etc/profile.d/conda.sh
+conda activate mynewenv
 
 # Run the Python script
 python combined_uncertain_fold3.py

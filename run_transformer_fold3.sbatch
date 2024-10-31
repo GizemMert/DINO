@@ -16,6 +16,6 @@
 export TMPDIR=/tmp
 
 ulimit -n 4096
-source /home/aih/gizem.mert/miniconda3/etc/profile.d/conda.sh
-conda activate my_new_env
+source /home/aih/gizem.mert/mambaforge/etc/profile.d/conda.sh
+conda activate mynewenv
 python -u train.py --fold 3 > output_fold3_loss.txt
