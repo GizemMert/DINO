@@ -4,7 +4,9 @@ import torch
 import torch.nn.functional as F
 import sys
 import torch.nn as nn
-sys.path.append(os.path.abspath("/home/aih/gizem.mert/Dino/DINO"))
+
+import sys
+sys.path.insert(0, "/home/aih/gizem.mert/Dino/DINO")
 from transformer import Transformer
 from classifier_dropout import ViTMiL
 # from dataset_mixed import *  # dataset
