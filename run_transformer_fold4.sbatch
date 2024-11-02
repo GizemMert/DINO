@@ -12,7 +12,7 @@
 #SBATCH --mem=60G
 #SBATCH --nice=10000
 
-/home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
+source /home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
 conda activate myenv
 
 

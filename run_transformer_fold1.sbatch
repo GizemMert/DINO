@@ -14,6 +14,6 @@ export TMPDIR=/tmp
 
 ulimit -n 409
 
-/home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
+source /home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
 conda activate myenv
 python -u train.py --fold 1 > output_fold1_loss.txt
