@@ -13,7 +13,7 @@
 #SBATCH --nice=10000
 
 source /home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
-conda activate myenv
+conda activate env
 
 
 # Run the Python script using full path to ensure correct environment
