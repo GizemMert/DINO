@@ -17,4 +17,4 @@ conda activate env
 
 
 # Run the Python script using full path to ensure correct environment
-/home/aih/gizem.mert/mambaforge/envs/mynewenv/bin/python -u train.py --fold 4 > output_fold4_1_loss.txt
+python train.py --fold 4 > output_fold4_1_loss.txt
