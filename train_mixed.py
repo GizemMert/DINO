@@ -7,8 +7,9 @@ Created on Sat Aug  5 14:10:27 2023
 from model_train import ModelTrainer
 #from model_eval import *  # model training function
 from classifier_dropout import ViTMiL
-from dataset_mixed import MllDataset       # dataset
+from dataset_mixed import MllDataset_train       # dataset
 from plot_confusion import plot_confusion_matrix
+from dataset2 import MllDataset
 
 import torch.optim as optim
 #from torchvision import transforms
@@ -187,7 +188,7 @@ def main():
     val_files = pd.read_csv(os.path.join(csv_root,f'data_fold_{args.fold}',"val.csv"))
     test_files = pd.read_csv(os.path.join(csv_root,f'data_fold_{args.fold}',"test.csv"))
 
-    datasets['train'] = MllDataset(
+    datasets['train'] = MllDataset_train(
         mixed_data_filepaths=mixed_data_filepaths,
         data_files=mixed_train_files,
         class_count=class_count,

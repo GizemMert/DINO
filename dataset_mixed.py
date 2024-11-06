@@ -10,7 +10,7 @@ import os
 import pandas as pd
 
 
-class MllDataset(Dataset):
+class MllDataset_train(Dataset):
     '''MLL dataset class for mixed real and artificial data. Can be used by PyTorch DataLoader'''
 
     def __init__(self, mixed_data_filepaths, data_files, class_count, data_path, artificial_data_path):
