@@ -164,8 +164,8 @@ def main():
     datasets = {}
 
     data_path = "/lustre/groups/labs/marr/qscd01/datasets/230824_MLL_BELUGA/RawImages"  # Real patients
-    artificial_data_path = f"/home/aih/gizem.mert/Dino/DINO/{args.fold}/artificial_data/experiment_3/data"  # Artificial patient folders
-    mixed_data = f"/home/aih/gizem.mert/Dino/DINO/{args.fold}/mixed_uncertain/max_10_percent"
+    artificial_data_path = f"/home/aih/gizem.mert/Dino/DINO/fold{args.fold}/artificial_data/experiment_3/data"  # Artificial patient folders
+    mixed_data = f"/home/aih/gizem.mert/Dino/DINO/fold{args.fold}/mixed_uncertain/max_10_percent"
 
     with open(os.path.join(mixed_data, 'file_paths.pkl'), 'rb') as f:
         mixed_data_filepaths = pickle.load(f)
