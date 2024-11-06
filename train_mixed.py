@@ -173,7 +173,7 @@ def main():
     csv_root = "data_cross_val"
 
     # Load the mixed_train.csv
-    mixed_train_files = pd.read_csv(os.path.join(args.source_folder, 'mixed_train.csv'))
+    mixed_train_files = pd.read_csv(os.path.join(mixed_data, 'mixed_train.csv'))
 
     def get_label(df, diagnosis):
         return df[df['diagnose'] == diagnosis]['label'].values[0]
