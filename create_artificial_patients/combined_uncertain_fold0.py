@@ -295,6 +295,10 @@ def save_patient_filepaths(selected_paths, new_folder, paths_real_patients):
 
     # Add uncertain patients to the paths
     for p, path in selected_paths.items():
+        # Ensure that `path` is a list
+        if not isinstance(path, list):
+            path = [path]
+
         if p in paths_mixed_patients:
             paths_mixed_patients[p] += path
         else:
