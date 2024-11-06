@@ -80,6 +80,8 @@ class MllDataset_train(Dataset):
 
         # Get the folder path from mixed_data_filepaths
         folder_path = self.mixed_data_filepaths[patient_id]
+        print(f"[DEBUG] Type of folder_path: {type(folder_path)}")
+        print(f"[DEBUG] Content of folder_path: {folder_path}")
 
         # Check if the folder path corresponds to a real or artificial patient
         if os.path.exists(os.path.join(self.artificial_data_path, folder_path)):
