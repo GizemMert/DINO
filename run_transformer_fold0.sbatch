@@ -13,4 +13,4 @@
 
 source /home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
 conda activate myenv
-python -u train.py --fold 0 > output_fold0_loss.txt
+python -u train_mixed.py --fold 0 > output_fold0_loss.txt

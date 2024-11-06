@@ -16,4 +16,4 @@ ulimit -n 409
 
 source /home/aih/gizem.mert/tools/apps/mamba/etc/profile.d/conda.sh
 conda activate myenv
-python -u train.py --fold 1 > output_fold1_loss.txt
+python -u train_mixed.py --fold 1 > output_fold1_loss.txt
