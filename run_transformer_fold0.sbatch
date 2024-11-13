@@ -3,10 +3,10 @@
 #SBATCH --output=slurm_pyscript_%j_fold0.job
 #SBATCH --error=slurm_error_%j_fold0.job
 #SBATCH --partition=gpu_p
-#SBATCH --qos=gpu_normal
+#SBATCH --qos=gpu_long
 #SBATCH --gres=gpu:1
 
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=60G
 #SBATCH --nice=10000
